@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ItineraryAdmin.Properties
-{
-
-
+namespace ItineraryAdmin.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,49 +22,121 @@ namespace ItineraryAdmin.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ItineraryAdmin.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_left_3x {
+            get {
+                object obj = ResourceManager.GetObject("chevron_left_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_right_3x {
+            get {
+                object obj = ResourceManager.GetObject("chevron_right_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT ShipID, Name
+        ///FROM CruiseShip
+        ///ORDER BY Name ASC;.
+        /// </summary>
+        internal static string CruiseShip_ListNameAndId {
+            get {
+                return ResourceManager.GetString("CruiseShip_ListNameAndId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM ItineraryStop
+        ///WHERE ShipID = @shipID;.
+        /// </summary>
+        internal static string ItineraryStop_ClearByShipID {
+            get {
+                return ResourceManager.GetString("ItineraryStop_ClearByShipID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO ItineraryStop(
+        ///	ShipID,
+        ///	SeaportID
+        ///)
+        ///VALUES (
+        ///	@shipID,
+        ///	@seaportID
+        ///).
+        /// </summary>
+        internal static string ItineraryStop_Insert {
+            get {
+                return ResourceManager.GetString("ItineraryStop_Insert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT ItineraryStop.*, Name FROM ItineraryStop
+        ///INNER JOIN Seaport ON ItineraryStop.SeaportID = Seaport.SeaportID
+        ///WHERE ShipID = (SELECT ShipID FROM CruiseShip WHERE Name = @ShipName)
+        ///ORDER BY StopOrder ASC;.
+        /// </summary>
+        internal static string ItineraryStop_ListByShipName {
+            get {
+                return ResourceManager.GetString("ItineraryStop_ListByShipName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT SeaportID, Name
+        ///FROM Seaport
+        ///ORDER BY Name ASC;.
+        /// </summary>
+        internal static string Seaport_ListNameAndId {
+            get {
+                return ResourceManager.GetString("Seaport_ListNameAndId", resourceCulture);
             }
         }
     }

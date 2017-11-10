@@ -28,153 +28,202 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitForm = new System.Windows.Forms.SplitContainer();
+            this.lblShips = new System.Windows.Forms.Label();
+            this.cmbShips = new System.Windows.Forms.ComboBox();
+            this.lblNoneSelected = new System.Windows.Forms.Label();
+            this.splitControls = new System.Windows.Forms.SplitContainer();
             this.grpPorts = new System.Windows.Forms.GroupBox();
-            this.chkPort3 = new System.Windows.Forms.CheckBox();
-            this.chkPort2 = new System.Windows.Forms.CheckBox();
-            this.chkPort1 = new System.Windows.Forms.CheckBox();
+            this.btnUnassign = new System.Windows.Forms.Button();
+            this.btnAssign = new System.Windows.Forms.Button();
+            this.lstAssignedPorts = new System.Windows.Forms.ListBox();
+            this.lstUnassignedPorts = new System.Windows.Forms.ListBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitForm)).BeginInit();
+            this.splitForm.Panel1.SuspendLayout();
+            this.splitForm.Panel2.SuspendLayout();
+            this.splitForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitControls)).BeginInit();
+            this.splitControls.Panel1.SuspendLayout();
+            this.splitControls.Panel2.SuspendLayout();
+            this.splitControls.SuspendLayout();
             this.grpPorts.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // splitForm
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitForm.Location = new System.Drawing.Point(0, 0);
+            this.splitForm.Name = "splitForm";
+            this.splitForm.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // splitForm.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitForm.Panel1.Controls.Add(this.lblShips);
+            this.splitForm.Panel1.Controls.Add(this.cmbShips);
             // 
-            // splitContainer1.Panel2
+            // splitForm.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(284, 146);
-            this.splitContainer1.SplitterDistance = 46;
-            this.splitContainer1.TabIndex = 0;
+            this.splitForm.Panel2.Controls.Add(this.lblNoneSelected);
+            this.splitForm.Panel2.Controls.Add(this.splitControls);
+            this.splitForm.Size = new System.Drawing.Size(284, 306);
+            this.splitForm.SplitterDistance = 55;
+            this.splitForm.TabIndex = 0;
             // 
-            // comboBox1
+            // lblShips
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(259, 21);
-            this.comboBox1.TabIndex = 0;
+            this.lblShips.AutoSize = true;
+            this.lblShips.Location = new System.Drawing.Point(15, 11);
+            this.lblShips.Name = "lblShips";
+            this.lblShips.Size = new System.Drawing.Size(77, 13);
+            this.lblShips.TabIndex = 1;
+            this.lblShips.Text = "Select a cruise";
             // 
-            // splitContainer2
+            // cmbShips
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.cmbShips.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShips.FormattingEnabled = true;
+            this.cmbShips.Location = new System.Drawing.Point(12, 28);
+            this.cmbShips.Name = "cmbShips";
+            this.cmbShips.Size = new System.Drawing.Size(260, 21);
+            this.cmbShips.TabIndex = 0;
+            this.cmbShips.SelectedIndexChanged += new System.EventHandler(this.cmbShips_SelectedIndexChanged);
             // 
-            // splitContainer2.Panel1
+            // lblNoneSelected
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.grpPorts);
+            this.lblNoneSelected.AutoSize = true;
+            this.lblNoneSelected.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoneSelected.Location = new System.Drawing.Point(169, 38);
+            this.lblNoneSelected.Name = "lblNoneSelected";
+            this.lblNoneSelected.Size = new System.Drawing.Size(90, 13);
+            this.lblNoneSelected.TabIndex = 3;
+            this.lblNoneSelected.Text = "No Ship Selected";
             // 
-            // splitContainer2.Panel2
+            // splitControls
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.btnSubmit);
-            this.splitContainer2.Size = new System.Drawing.Size(284, 96);
-            this.splitContainer2.SplitterDistance = 42;
-            this.splitContainer2.TabIndex = 0;
+            this.splitControls.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitControls.Location = new System.Drawing.Point(0, 0);
+            this.splitControls.Name = "splitControls";
+            this.splitControls.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitControls.Panel1
+            // 
+            this.splitControls.Panel1.Controls.Add(this.grpPorts);
+            // 
+            // splitControls.Panel2
+            // 
+            this.splitControls.Panel2.Controls.Add(this.btnSubmit);
+            this.splitControls.Size = new System.Drawing.Size(284, 247);
+            this.splitControls.SplitterDistance = 201;
+            this.splitControls.TabIndex = 0;
             // 
             // grpPorts
             // 
-            this.grpPorts.Controls.Add(this.chkPort3);
-            this.grpPorts.Controls.Add(this.chkPort2);
-            this.grpPorts.Controls.Add(this.chkPort1);
+            this.grpPorts.AutoSize = true;
+            this.grpPorts.Controls.Add(this.btnUnassign);
+            this.grpPorts.Controls.Add(this.btnAssign);
+            this.grpPorts.Controls.Add(this.lstAssignedPorts);
+            this.grpPorts.Controls.Add(this.lstUnassignedPorts);
             this.grpPorts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpPorts.Location = new System.Drawing.Point(0, 0);
             this.grpPorts.Name = "grpPorts";
-            this.grpPorts.Size = new System.Drawing.Size(284, 42);
+            this.grpPorts.Size = new System.Drawing.Size(284, 201);
             this.grpPorts.TabIndex = 1;
             this.grpPorts.TabStop = false;
             this.grpPorts.Text = "Destination Ports";
             // 
-            // chkPort3
+            // btnUnassign
             // 
-            this.chkPort3.AutoSize = true;
-            this.chkPort3.Location = new System.Drawing.Point(184, 20);
-            this.chkPort3.Name = "chkPort3";
-            this.chkPort3.Size = new System.Drawing.Size(54, 17);
-            this.chkPort3.TabIndex = 0;
-            this.chkPort3.Text = "Port 3";
-            this.chkPort3.UseVisualStyleBackColor = true;
+            this.btnUnassign.Enabled = false;
+            this.btnUnassign.Image = global::ItineraryAdmin.Properties.Resources.chevron_left_3x;
+            this.btnUnassign.Location = new System.Drawing.Point(128, 58);
+            this.btnUnassign.Name = "btnUnassign";
+            this.btnUnassign.Size = new System.Drawing.Size(28, 28);
+            this.btnUnassign.TabIndex = 3;
+            this.btnUnassign.UseVisualStyleBackColor = true;
+            this.btnUnassign.Click += new System.EventHandler(this.btnUnassign_Click);
             // 
-            // chkPort2
+            // btnAssign
             // 
-            this.chkPort2.AutoSize = true;
-            this.chkPort2.Location = new System.Drawing.Point(98, 20);
-            this.chkPort2.Name = "chkPort2";
-            this.chkPort2.Size = new System.Drawing.Size(54, 17);
-            this.chkPort2.TabIndex = 0;
-            this.chkPort2.Text = "Port 2";
-            this.chkPort2.UseVisualStyleBackColor = true;
+            this.btnAssign.Enabled = false;
+            this.btnAssign.Image = global::ItineraryAdmin.Properties.Resources.chevron_right_3x;
+            this.btnAssign.Location = new System.Drawing.Point(128, 114);
+            this.btnAssign.Name = "btnAssign";
+            this.btnAssign.Size = new System.Drawing.Size(28, 28);
+            this.btnAssign.TabIndex = 2;
+            this.btnAssign.UseVisualStyleBackColor = true;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
-            // chkPort1
+            // lstAssignedPorts
             // 
-            this.chkPort1.AutoSize = true;
-            this.chkPort1.Location = new System.Drawing.Point(12, 19);
-            this.chkPort1.Name = "chkPort1";
-            this.chkPort1.Size = new System.Drawing.Size(54, 17);
-            this.chkPort1.TabIndex = 0;
-            this.chkPort1.Text = "Port 1";
-            this.chkPort1.UseVisualStyleBackColor = true;
+            this.lstAssignedPorts.Enabled = false;
+            this.lstAssignedPorts.FormattingEnabled = true;
+            this.lstAssignedPorts.Location = new System.Drawing.Point(157, 19);
+            this.lstAssignedPorts.Name = "lstAssignedPorts";
+            this.lstAssignedPorts.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lstAssignedPorts.Size = new System.Drawing.Size(115, 173);
+            this.lstAssignedPorts.TabIndex = 1;
+            this.lstAssignedPorts.SelectedIndexChanged += new System.EventHandler(this.lstAssignedPorts_SelectedIndexChanged);
+            // 
+            // lstUnassignedPorts
+            // 
+            this.lstUnassignedPorts.Enabled = false;
+            this.lstUnassignedPorts.FormattingEnabled = true;
+            this.lstUnassignedPorts.Location = new System.Drawing.Point(12, 19);
+            this.lstUnassignedPorts.Name = "lstUnassignedPorts";
+            this.lstUnassignedPorts.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lstUnassignedPorts.Size = new System.Drawing.Size(115, 173);
+            this.lstUnassignedPorts.TabIndex = 0;
+            this.lstUnassignedPorts.SelectedIndexChanged += new System.EventHandler(this.lstUnassignedPorts_SelectedIndexChanged);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(93, 14);
+            this.btnSubmit.Enabled = false;
+            this.btnSubmit.Location = new System.Drawing.Point(94, 12);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(96, 23);
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "Submit Changes";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 146);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(284, 306);
+            this.Controls.Add(this.splitForm);
             this.Name = "Form1";
             this.Text = "Itinerary Control Panel";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
+            this.splitForm.Panel1.ResumeLayout(false);
+            this.splitForm.Panel1.PerformLayout();
+            this.splitForm.Panel2.ResumeLayout(false);
+            this.splitForm.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitForm)).EndInit();
+            this.splitForm.ResumeLayout(false);
+            this.splitControls.Panel1.ResumeLayout(false);
+            this.splitControls.Panel1.PerformLayout();
+            this.splitControls.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitControls)).EndInit();
+            this.splitControls.ResumeLayout(false);
             this.grpPorts.ResumeLayout(false);
-            this.grpPorts.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitForm;
+        private System.Windows.Forms.ComboBox cmbShips;
+        private System.Windows.Forms.SplitContainer splitControls;
         private System.Windows.Forms.GroupBox grpPorts;
-        private System.Windows.Forms.CheckBox chkPort3;
-        private System.Windows.Forms.CheckBox chkPort2;
-        private System.Windows.Forms.CheckBox chkPort1;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblShips;
+        private System.Windows.Forms.Label lblNoneSelected;
+        private System.Windows.Forms.ListBox lstAssignedPorts;
+        private System.Windows.Forms.ListBox lstUnassignedPorts;
+        private System.Windows.Forms.Button btnUnassign;
+        private System.Windows.Forms.Button btnAssign;
     }
 }
 
