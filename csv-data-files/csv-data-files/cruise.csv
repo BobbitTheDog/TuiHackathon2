@@ -1,0 +1,827 @@
+SHIP_ID,ITINERARY_ID,DURATION,CRUISE_AREA
+150013,267385,6,Western Mediterranean
+150013,267387,7,Eastern Mediterranean
+150013,267389,7,Eastern Mediterranean
+150013,267391,7,Eastern Mediterranean
+150013,267393,7,Eastern Mediterranean
+150013,172989,7,Western Mediterranean
+150013,172991,7,Western Mediterranean
+150013,262471,7,Caribbean & Central America
+150013,252203,7,Western Mediterranean
+150013,149709,7,Western Mediterranean
+150013,149711,7,Western Mediterranean
+150013,149713,5,Western Mediterranean
+150013,149715,7,Western Mediterranean
+150013,149717,7,Western Mediterranean
+150013,149707,7,Western Mediterranean
+150013,190681,18,Caribbean & Central America
+150013,190683,7,Western Mediterranean
+150013,190685,7,Western Mediterranean
+150013,190687,7,Caribbean & Central America
+150013,190689,7,Caribbean & Central America
+150013,190691,7,Caribbean & Central America
+150013,190693,7,Caribbean & Central America
+150013,190695,18,Caribbean & Central America
+150013,190697,17,Caribbean & Central America
+150013,301055,7,Caribbean & Central America
+150013,301059,7,Caribbean & Central America
+150013,301139,7,Western Mediterranean
+150013,258497,7,Western Mediterranean
+150013,258507,7,Western Mediterranean
+150013,258517,7,Western Mediterranean
+150013,307211,7,Western Mediterranean
+150013,307217,7,Western Mediterranean
+150013,307223,7,Caribbean & Central America
+150013,307229,7,Caribbean & Central America
+150013,307235,7,Caribbean & Central America
+150013,307265,18,Caribbean & Central America
+150013,307271,17,Caribbean & Central America
+150013,307277,18,Caribbean & Central America
+150013,299599,7,Western Mediterranean
+150013,299605,7,Western Mediterranean
+150013,299609,7,Caribbean & Central America
+150013,299615,7,Caribbean & Central America
+150013,299619,7,Caribbean & Central America
+150013,299625,7,Caribbean & Central America
+150013,299629,7,Caribbean & Central America
+150013,299635,7,Caribbean & Central America
+150013,299679,18,Caribbean & Central America
+150013,299685,18,Caribbean & Central America
+150013,300133,7,Western Mediterranean
+150013,300139,7,Western Mediterranean
+150013,300145,7,Western Mediterranean
+150013,300151,7,Western Mediterranean
+150013,300157,7,Western Mediterranean
+150013,300163,7,Western Mediterranean
+150013,300169,5,Western Mediterranean
+150013,300175,5,Western Mediterranean
+150013,300181,7,Western Mediterranean
+150013,300185,7,Western Mediterranean
+150013,388155,7,Caribbean & Central America
+150013,388189,18,Caribbean & Central America
+150013,388191,18,Caribbean & Central America
+150013,388193,18,Caribbean & Central America
+150013,388195,18,Caribbean & Central America
+150013,388197,17,Caribbean & Central America
+150013,388199,17,Caribbean & Central America
+150013,388201,17,Caribbean & Central America
+150013,388203,17,Caribbean & Central America
+150013,388205,18,Caribbean & Central America
+150013,388207,18,Caribbean & Central America
+150013,388209,18,Caribbean & Central America
+150013,388211,18,Caribbean & Central America
+150013,285227,7,Eastern Mediterranean
+150013,299589,7,Western Mediterranean
+150013,299595,7,Western Mediterranean
+150013,373463,17,Caribbean & Central America
+150013,373473,18,Caribbean & Central America
+150013,307685,7,Eastern Mediterranean
+150013,307691,7,Eastern Mediterranean
+150013,307697,7,Eastern Mediterranean
+150013,307703,7,Eastern Mediterranean
+150013,307709,6,Western Mediterranean
+150013,299689,17,Caribbean & Central America
+150013,299695,17,Caribbean & Central America
+150013,299699,18,Caribbean & Central America
+150013,299705,18,Caribbean & Central America
+150013,307553,7,Western Mediterranean
+150013,307561,7,Western Mediterranean
+150013,307569,7,Western Mediterranean
+150013,307577,5,Western Mediterranean
+150013,307583,7,Western Mediterranean
+150013,301145,7,Western Mediterranean
+150013,308175,7,Caribbean & Central America
+150013,308221,7,Western Mediterranean
+150013,389235,7,Caribbean & Central America
+150013,389237,7,Caribbean & Central America
+150013,389239,7,Caribbean & Central America
+150013,389241,7,Caribbean & Central America
+150013,389243,7,Caribbean & Central America
+150013,389259,7,Western Mediterranean
+150013,389261,7,Western Mediterranean
+150013,375747,7,Caribbean & Central America
+150013,388117,7,Western Mediterranean
+150013,388119,7,Western Mediterranean
+150013,388123,7,Western Mediterranean
+150013,388125,7,Western Mediterranean
+150013,388127,7,Western Mediterranean
+150013,388129,7,Western Mediterranean
+150013,388131,7,Western Mediterranean
+150013,388133,7,Caribbean & Central America
+150013,388135,7,Caribbean & Central America
+150013,388137,7,Caribbean & Central America
+150013,388139,7,Caribbean & Central America
+150013,388141,7,Caribbean & Central America
+150013,388143,7,Caribbean & Central America
+150013,388145,7,Caribbean & Central America
+150013,388147,7,Caribbean & Central America
+150013,388149,7,Caribbean & Central America
+150013,388151,7,Caribbean & Central America
+150013,388153,7,Caribbean & Central America
+150013,321887,18,Caribbean & Central America
+150013,321889,7,Caribbean & Central America
+150013,321891,7,Caribbean & Central America
+150013,321893,7,Caribbean & Central America
+150013,374735,7,Caribbean & Central America
+150013,388487,7,Western Mediterranean
+150013,388489,7,Western Mediterranean
+150013,388491,7,Western Mediterranean
+150013,388493,7,Western Mediterranean
+150013,388495,7,Western Mediterranean
+150013,388497,7,Western Mediterranean
+150013,388499,7,Western Mediterranean
+150013,388501,7,Western Mediterranean
+150013,388503,7,Western Mediterranean
+150013,388505,7,Western Mediterranean
+150013,388507,7,Western Mediterranean
+150013,388509,7,Western Mediterranean
+150013,388511,5,Western Mediterranean
+150013,388513,5,Western Mediterranean
+150013,388515,5,Western Mediterranean
+150013,388517,5,Western Mediterranean
+150013,388519,7,Western Mediterranean
+150013,388521,7,Western Mediterranean
+150013,373841,7,Western Mediterranean
+150013,373851,7,Western Mediterranean
+150013,373861,7,Western Mediterranean
+150013,373871,5,Western Mediterranean
+150013,388637,7,Eastern Mediterranean
+150013,388639,7,Eastern Mediterranean
+150013,388641,7,Eastern Mediterranean
+150013,388643,7,Eastern Mediterranean
+150013,388645,7,Eastern Mediterranean
+150013,388647,7,Eastern Mediterranean
+150013,388649,7,Eastern Mediterranean
+150013,388651,7,Eastern Mediterranean
+150013,388653,7,Eastern Mediterranean
+150013,388655,7,Eastern Mediterranean
+150013,388657,7,Eastern Mediterranean
+150013,388659,7,Eastern Mediterranean
+150013,388661,7,Eastern Mediterranean
+150013,388663,7,Eastern Mediterranean
+150013,388665,7,Eastern Mediterranean
+150013,388667,7,Eastern Mediterranean
+150013,388669,6,Western Mediterranean
+150013,388671,6,Western Mediterranean
+150013,388673,6,Western Mediterranean
+150013,388675,6,Western Mediterranean
+150013,387731,18,Caribbean & Central America
+150013,387733,18,Caribbean & Central America
+150013,387735,18,Caribbean & Central America
+150013,389167,7,Caribbean & Central America
+150013,373363,7,Western Mediterranean
+150013,373373,7,Western Mediterranean
+150013,373383,7,Caribbean & Central America
+150013,373393,7,Caribbean & Central America
+150013,373403,7,Caribbean & Central America
+150013,373453,18,Caribbean & Central America
+150013,374031,7,Eastern Mediterranean
+150013,374041,7,Eastern Mediterranean
+150013,387621,7,Caribbean & Central America
+150013,387623,7,Caribbean & Central America
+150013,374051,7,Eastern Mediterranean
+150013,387625,7,Caribbean & Central America
+150013,387627,7,Caribbean & Central America
+150013,387629,7,Caribbean & Central America
+150013,387631,7,Caribbean & Central America
+150013,374061,7,Eastern Mediterranean
+150013,387633,7,Caribbean & Central America
+150013,387635,7,Caribbean & Central America
+150013,387637,7,Caribbean & Central America
+150013,374071,6,Western Mediterranean
+150014,267445,7,Western Mediterranean
+150014,267447,7,Western Mediterranean
+150014,267449,7,Western Mediterranean
+150014,267451,7,Western Mediterranean
+150014,310547,7,Western Mediterranean
+150014,310549,7,Western Mediterranean
+150014,277227,7,Western Mediterranean
+150014,307715,7,Western Mediterranean
+150014,307721,7,Western Mediterranean
+150014,307727,7,Western Mediterranean
+150014,307733,7,Western Mediterranean
+150014,389263,7,Western Mediterranean
+150014,389265,7,Western Mediterranean
+150014,389267,7,Western Mediterranean
+150014,321873,19,Caribbean & Central America
+150014,321881,21,Caribbean & Central America
+150014,321895,15,Caribbean & Central America
+150014,321907,7,Caribbean & Central America
+150014,321911,7,Caribbean & Central America
+150014,321913,7,Caribbean & Central America
+150014,321915,7,Caribbean & Central America
+150014,321917,7,Caribbean & Central America
+150014,388677,7,Western Mediterranean
+150014,388679,7,Western Mediterranean
+150014,388681,7,Western Mediterranean
+150014,388683,7,Western Mediterranean
+150014,388685,7,Western Mediterranean
+150014,388687,7,Western Mediterranean
+150014,388689,7,Western Mediterranean
+150014,388691,7,Western Mediterranean
+150014,388693,7,Western Mediterranean
+150014,388695,7,Western Mediterranean
+150014,388697,7,Western Mediterranean
+150014,388699,7,Western Mediterranean
+150014,388701,7,Western Mediterranean
+150014,388703,7,Western Mediterranean
+150014,388705,7,Western Mediterranean
+150014,388707,7,Western Mediterranean
+150014,387737,15,Caribbean & Central America
+150014,387739,15,Caribbean & Central America
+150014,387741,15,Caribbean & Central America
+150014,387743,21,Caribbean & Central America
+150014,387745,21,Caribbean & Central America
+150014,387747,21,Caribbean & Central America
+150014,387749,19,Caribbean & Central America
+150014,389163,7,Caribbean & Central America
+150014,389165,7,Caribbean & Central America
+150014,387603,7,Caribbean & Central America
+150014,387605,7,Caribbean & Central America
+150014,387607,7,Caribbean & Central America
+150014,387609,7,Caribbean & Central America
+150014,387611,7,Caribbean & Central America
+150014,387613,7,Caribbean & Central America
+150014,387615,7,Caribbean & Central America
+150014,387617,7,Caribbean & Central America
+150014,387619,7,Caribbean & Central America
+150014,374081,7,Western Mediterranean
+150014,374091,7,Western Mediterranean
+150014,374101,7,Western Mediterranean
+150014,374111,7,Western Mediterranean
+150012,43069,7,Western Mediterranean
+150012,43073,7,Western Mediterranean
+150012,43075,7,Western Mediterranean
+150012,47839,15,Caribbean & Central America
+150012,47841,7,Caribbean & Central America
+150012,47843,7,Caribbean & Central America
+150012,47847,7,Caribbean & Central America
+150012,47849,7,Caribbean & Central America
+150012,47851,7,Caribbean & Central America
+150012,47875,7,Caribbean & Central America
+150012,47877,7,Caribbean & Central America
+150012,47879,7,Caribbean & Central America
+150012,47881,13,Caribbean & Central America
+150012,42731,7,Western Mediterranean
+150012,42733,7,Western Mediterranean
+150012,42735,7,Western Mediterranean
+150012,42727,7,Western Mediterranean
+150012,42729,7,Western Mediterranean
+150012,71823,7,Western Mediterranean
+150012,71825,7,Western Mediterranean
+150012,71839,7,Western Mediterranean
+150012,103933,15,Caribbean & Central America
+150012,103945,7,Western Mediterranean
+150012,103947,7,Western Mediterranean
+150012,103987,7,Caribbean & Central America
+150012,103989,7,Caribbean & Central America
+150012,42469,7,Western Mediterranean
+150012,42471,7,Western Mediterranean
+150012,42473,7,Western Mediterranean
+150012,42475,7,Western Mediterranean
+150012,43255,7,Western Mediterranean
+150012,43261,7,Western Mediterranean
+150012,43733,7,Western Mediterranean
+150012,43735,7,Western Mediterranean
+150012,43737,7,Western Mediterranean
+150012,43739,7,Western Mediterranean
+150012,43749,7,Western Mediterranean
+150012,43805,7,Western Mediterranean
+150012,43807,7,Western Mediterranean
+150012,43809,7,Western Mediterranean
+150012,160123,7,Caribbean & Central America
+150012,160125,7,Caribbean & Central America
+150012,160127,7,Caribbean & Central America
+150012,66179,7,Caribbean & Central America
+150012,66181,7,Caribbean & Central America
+150012,120459,7,Western Mediterranean
+150012,120467,7,Western Mediterranean
+150012,66107,7,Caribbean & Central America
+150012,66177,7,Caribbean & Central America
+150012,120475,7,Western Mediterranean
+150012,120483,7,Western Mediterranean
+150012,121087,7,Western Mediterranean
+150012,121095,7,Western Mediterranean
+150012,164205,7,Western Mediterranean
+150012,164215,7,Western Mediterranean
+150012,71927,7,Caribbean & Central America
+150012,71929,7,Caribbean & Central America
+150012,71931,7,Caribbean & Central America
+150012,71933,7,Caribbean & Central America
+150012,71935,15,Caribbean & Central America
+150012,71937,13,Caribbean & Central America
+150012,72033,7,Western Mediterranean
+150012,72035,7,Western Mediterranean
+150012,164225,7,Western Mediterranean
+150012,164235,7,Western Mediterranean
+150012,104181,7,Caribbean & Central America
+150012,104183,7,Caribbean & Central America
+150012,104185,7,Caribbean & Central America
+150012,104187,7,Caribbean & Central America
+150012,104189,13,Caribbean & Central America
+150012,104225,7,Caribbean & Central America
+150012,104033,7,Western Mediterranean
+150012,104035,7,Western Mediterranean
+150012,101677,7,Western Mediterranean
+150012,101685,7,Western Mediterranean
+150012,165319,7,Western Mediterranean
+150012,163747,7,Caribbean & Central America
+150012,105819,7,Western Mediterranean
+150012,105823,7,Western Mediterranean
+150012,105829,7,Western Mediterranean
+150012,105831,7,Western Mediterranean
+150012,105833,7,Western Mediterranean
+150012,105837,7,Western Mediterranean
+150012,105843,7,Western Mediterranean
+150012,105845,7,Western Mediterranean
+150012,105847,7,Western Mediterranean
+150012,105853,7,Western Mediterranean
+150012,106095,7,Western Mediterranean
+150012,106097,7,Western Mediterranean
+150012,106099,7,Western Mediterranean
+150012,106101,7,Western Mediterranean
+150012,106103,7,Western Mediterranean
+150012,106105,7,Western Mediterranean
+150012,258209,7,Western Mediterranean
+150012,258213,7,Western Mediterranean
+150012,258221,7,Western Mediterranean
+150012,258225,7,Western Mediterranean
+150012,125255,7,Caribbean & Central America
+150012,125761,13,Caribbean & Central America
+150012,125779,7,Western Mediterranean
+150012,125781,7,Western Mediterranean
+150012,125791,7,Caribbean & Central America
+150012,125793,7,Caribbean & Central America
+150012,125795,7,Caribbean & Central America
+150012,125797,7,Caribbean & Central America
+150012,125799,7,Caribbean & Central America
+150012,165577,7,Caribbean & Central America
+150012,120903,15,Caribbean & Central America
+150012,259179,7,Western Mediterranean
+150012,259183,7,Western Mediterranean
+150012,259187,7,Western Mediterranean
+150012,259191,7,Western Mediterranean
+150012,259199,7,Western Mediterranean
+150012,259205,7,Western Mediterranean
+150012,259207,7,Western Mediterranean
+150012,259211,7,Western Mediterranean
+150012,154747,7,Western Mediterranean
+150012,257587,7,Western Mediterranean
+150012,257591,7,Western Mediterranean
+150012,257597,7,Western Mediterranean
+150012,257601,7,Western Mediterranean
+150012,257607,7,Western Mediterranean
+150012,257611,7,Western Mediterranean
+150012,124935,7,Caribbean & Central America
+150012,257617,7,Western Mediterranean
+150012,257621,7,Western Mediterranean
+150012,124943,7,Caribbean & Central America
+150012,124951,7,Caribbean & Central America
+150012,267395,14,Western Mediterranean
+150012,267397,12,Western Mediterranean
+150012,267399,14,Scandinavia, the Baltic & UK
+150012,267401,7,Scandinavia, the Baltic & UK
+150012,267403,14,Scandinavia, the Baltic & UK
+150012,267435,14,Scandinavia, the Baltic & UK
+150012,267437,8,Scandinavia, the Baltic & UK
+150012,267439,14,Scandinavia, the Baltic & UK
+150012,267433,8,Scandinavia, the Baltic & UK
+150012,267441,6,Western Mediterranean
+150012,267443,3,Scandinavia, the Baltic & UK
+150012,267467,7,Scandinavia, the Baltic & UK
+150012,267469,13,Scandinavia, the Baltic & UK
+150012,267471,14,Scandinavia, the Baltic & UK
+150012,267473,14,Scandinavia, the Baltic & UK
+150012,267475,7,Scandinavia, the Baltic & UK
+150012,259431,7,Caribbean & Central America
+150012,259435,7,Caribbean & Central America
+150012,115407,7,Western Mediterranean
+150012,165329,7,Western Mediterranean
+150012,165339,7,Western Mediterranean
+150012,165349,7,Western Mediterranean
+150012,165367,7,Western Mediterranean
+150012,165385,7,Western Mediterranean
+150012,258185,7,Western Mediterranean
+150012,258189,7,Western Mediterranean
+150012,165397,7,Western Mediterranean
+150012,258197,7,Western Mediterranean
+150012,165409,7,Western Mediterranean
+150012,258201,7,Western Mediterranean
+150012,125067,7,Caribbean & Central America
+150012,125071,7,Caribbean & Central America
+150012,125099,7,Caribbean & Central America
+150012,262469,7,Caribbean & Central America
+150012,307951,7,Caribbean & Central America
+150012,307955,7,Caribbean & Central America
+150012,307959,7,Caribbean & Central America
+150012,307963,7,Caribbean & Central America
+150012,307967,15,Caribbean & Central America
+150012,307971,13,Caribbean & Central America
+150012,165001,7,Caribbean & Central America
+150012,165011,7,Caribbean & Central America
+150012,165021,7,Caribbean & Central America
+150012,165031,7,Caribbean & Central America
+150012,165041,15,Caribbean & Central America
+150012,165051,13,Caribbean & Central America
+150012,307373,7,Western Mediterranean
+150012,307379,7,Western Mediterranean
+150012,307385,7,Western Mediterranean
+150012,300711,13,Caribbean & Central America
+150012,190639,7,Caribbean & Central America
+150012,190641,7,Caribbean & Central America
+150012,190643,7,Caribbean & Central America
+150012,190671,7,Caribbean & Central America
+150012,190673,7,Caribbean & Central America
+150012,190675,7,Caribbean & Central America
+150012,190677,15,Caribbean & Central America
+150012,190679,14,Caribbean & Central America
+150012,209045,7,Caribbean & Central America
+150012,259335,7,Western Mediterranean
+150012,259337,7,Western Mediterranean
+150012,259347,7,Western Mediterranean
+150012,259351,7,Western Mediterranean
+150012,301089,7,Western Mediterranean
+150012,301093,7,Western Mediterranean
+150012,301099,7,Western Mediterranean
+150012,301107,7,Western Mediterranean
+150012,165509,7,Caribbean & Central America
+150012,165525,7,Caribbean & Central America
+150012,327989,8,Arabia & the Red Sea
+150012,327987,7,Arabia & the Red Sea
+150012,327991,14,Arabia & the Red Sea
+150012,307193,7,Caribbean & Central America
+150012,307199,7,Caribbean & Central America
+150012,307205,7,Caribbean & Central America
+150012,307253,15,Caribbean & Central America
+150012,307259,14,Caribbean & Central America
+150012,258911,7,Caribbean & Central America
+150012,258915,7,Caribbean & Central America
+150012,258923,7,Caribbean & Central America
+150012,258927,7,Caribbean & Central America
+150012,258935,15,Caribbean & Central America
+150012,258939,15,Caribbean & Central America
+150012,258945,13,Caribbean & Central America
+150012,258949,13,Caribbean & Central America
+150012,299659,15,Caribbean & Central America
+150012,299665,15,Caribbean & Central America
+150012,299669,14,Caribbean & Central America
+150012,299675,14,Caribbean & Central America
+150012,258887,7,Caribbean & Central America
+150012,258891,7,Caribbean & Central America
+150012,258899,7,Caribbean & Central America
+150012,258903,7,Caribbean & Central America
+150012,259449,7,Caribbean & Central America
+150012,259453,7,Caribbean & Central America
+150012,259469,7,Caribbean & Central America
+150012,259477,7,Caribbean & Central America
+150012,259481,7,Caribbean & Central America
+150012,259489,7,Caribbean & Central America
+150012,259491,7,Caribbean & Central America
+150012,259501,7,Caribbean & Central America
+150012,259505,7,Caribbean & Central America
+150012,259509,7,Caribbean & Central America
+150012,259441,7,Caribbean & Central America
+150012,259517,7,Caribbean & Central America
+150012,259519,7,Caribbean & Central America
+150012,259523,7,Caribbean & Central America
+150012,388173,15,Caribbean & Central America
+150012,388175,15,Caribbean & Central America
+150012,388177,15,Caribbean & Central America
+150012,388179,15,Caribbean & Central America
+150012,388181,14,Caribbean & Central America
+150012,388183,14,Caribbean & Central America
+150012,388185,14,Caribbean & Central America
+150012,388187,14,Caribbean & Central America
+150012,299835,7,Western Mediterranean
+150012,299839,7,Western Mediterranean
+150012,299845,7,Western Mediterranean
+150012,299849,7,Western Mediterranean
+150012,299855,7,Western Mediterranean
+150012,299859,7,Western Mediterranean
+150012,299865,7,Western Mediterranean
+150012,299869,7,Western Mediterranean
+150012,300919,7,Western Mediterranean
+150012,300921,7,Western Mediterranean
+150012,300923,7,Western Mediterranean
+150012,300929,7,Western Mediterranean
+150012,300933,7,Western Mediterranean
+150012,300935,7,Western Mediterranean
+150012,300937,7,Western Mediterranean
+150012,307607,14,Scandinavia, the Baltic & UK
+150012,307613,7,Scandinavia, the Baltic & UK
+150012,307619,13,Scandinavia, the Baltic & UK
+150012,307625,14,Scandinavia, the Baltic & UK
+150012,307631,14,Scandinavia, the Baltic & UK
+150012,307637,7,Scandinavia, the Baltic & UK
+150012,307643,14,Scandinavia, the Baltic & UK
+150012,307649,8,Scandinavia, the Baltic & UK
+150012,301021,7,Caribbean & Central America
+150012,301025,7,Caribbean & Central America
+150012,307655,14,Scandinavia, the Baltic & UK
+150012,301029,7,Caribbean & Central America
+150012,301033,7,Caribbean & Central America
+150012,307661,8,Scandinavia, the Baltic & UK
+150012,307667,14,Scandinavia, the Baltic & UK
+150012,307671,12,Western Mediterranean
+150012,301037,7,Caribbean & Central America
+150012,301041,7,Caribbean & Central America
+150012,388309,7,Western Mediterranean
+150012,388311,7,Western Mediterranean
+150012,388313,7,Western Mediterranean
+150012,388315,7,Western Mediterranean
+150012,299559,7,Caribbean & Central America
+150012,299565,7,Caribbean & Central America
+150012,299569,7,Caribbean & Central America
+150012,299575,7,Caribbean & Central America
+150012,299579,7,Caribbean & Central America
+150012,299585,7,Caribbean & Central America
+150012,299109,7,Western Mediterranean
+150012,299111,7,Western Mediterranean
+150012,299117,7,Western Mediterranean
+150012,299119,7,Western Mediterranean
+150012,299125,7,Western Mediterranean
+150012,299127,7,Western Mediterranean
+150012,299133,7,Western Mediterranean
+150012,299135,7,Western Mediterranean
+150012,308093,7,Western Mediterranean
+150012,308095,7,Western Mediterranean
+150012,308097,7,Western Mediterranean
+150012,308101,7,Western Mediterranean
+150012,307677,14,Western Mediterranean
+150012,301049,7,Caribbean & Central America
+150012,301053,7,Caribbean & Central America
+150012,306923,7,Western Mediterranean
+150012,306927,7,Western Mediterranean
+150012,306931,7,Western Mediterranean
+150012,306935,7,Western Mediterranean
+150012,335949,14,Asia
+150012,335951,14,Asia
+150012,335953,14,Asia
+150012,335947,14,Arabia & the Red Sea
+150012,300669,7,Caribbean & Central America
+150012,300671,7,Caribbean & Central America
+150012,300677,7,Caribbean & Central America
+150012,300679,7,Caribbean & Central America
+150012,300685,7,Caribbean & Central America
+150012,300687,7,Caribbean & Central America
+150012,300693,7,Caribbean & Central America
+150012,300695,7,Caribbean & Central America
+150012,300701,15,Caribbean & Central America
+150012,300703,15,Caribbean & Central America
+150012,300709,13,Caribbean & Central America
+150012,308247,7,Caribbean & Central America
+150012,308251,7,Caribbean & Central America
+150012,301177,7,Caribbean & Central America
+150012,301179,7,Caribbean & Central America
+150012,301181,7,Caribbean & Central America
+150012,301183,7,Caribbean & Central America
+150012,308255,7,Caribbean & Central America
+150012,308259,7,Caribbean & Central America
+150012,308261,7,Caribbean & Central America
+150012,301193,7,Caribbean & Central America
+150012,301195,7,Caribbean & Central America
+150012,308265,7,Caribbean & Central America
+150012,301201,7,Caribbean & Central America
+150012,301203,7,Caribbean & Central America
+150012,301209,7,Caribbean & Central America
+150012,301211,7,Caribbean & Central America
+150012,308273,7,Caribbean & Central America
+150012,301217,7,Caribbean & Central America
+150012,301219,7,Caribbean & Central America
+150012,301221,7,Caribbean & Central America
+150012,308277,7,Caribbean & Central America
+150012,301227,7,Caribbean & Central America
+150012,301233,7,Caribbean & Central America
+150012,301235,7,Caribbean & Central America
+150012,300913,7,Western Mediterranean
+150012,337923,14,Asia
+150012,337925,14,Asia
+150012,337927,14,Asia
+150012,337929,14,Asia
+150012,337931,14,Asia
+150012,337933,14,Asia
+150012,337935,14,Asia
+150012,337937,14,Asia
+150012,337939,14,Asia
+150012,337941,14,Asia
+150012,308157,7,Caribbean & Central America
+150012,308161,7,Caribbean & Central America
+150012,308165,7,Caribbean & Central America
+150012,308169,7,Caribbean & Central America
+150012,308197,7,Western Mediterranean
+150012,308203,7,Western Mediterranean
+150012,307391,7,Western Mediterranean
+150012,333919,7,Western Mediterranean
+150012,333947,14,Arabia & the Red Sea
+150012,333949,15,Arabia & the Red Sea
+150012,333951,14,Arabia & the Red Sea
+150012,333953,15,Arabia & the Red Sea
+150012,333955,15,Arabia & the Red Sea
+150012,333957,14,Arabia & the Red Sea
+150012,333959,14,Arabia & the Red Sea
+150012,333961,14,Arabia & the Red Sea
+150012,333963,14,Arabia & the Red Sea
+150012,389223,7,Caribbean & Central America
+150012,389225,7,Caribbean & Central America
+150012,389227,7,Caribbean & Central America
+150012,389229,7,Caribbean & Central America
+150012,389231,7,Caribbean & Central America
+150012,389233,7,Caribbean & Central America
+150012,389251,7,Western Mediterranean
+150012,389253,7,Western Mediterranean
+150012,389289,7,Caribbean & Central America
+150012,389291,7,Caribbean & Central America
+150012,389293,7,Caribbean & Central America
+150012,389295,7,Caribbean & Central America
+150012,389297,7,Caribbean & Central America
+150012,389299,7,Caribbean & Central America
+150012,389301,7,Caribbean & Central America
+150012,387451,7,Western Mediterranean
+150012,387453,7,Western Mediterranean
+150012,387455,7,Western Mediterranean
+150012,387457,7,Western Mediterranean
+150012,339909,14,Asia
+150012,388093,7,Caribbean & Central America
+150012,388095,7,Caribbean & Central America
+150012,388097,7,Caribbean & Central America
+150012,388099,7,Caribbean & Central America
+150012,388101,7,Caribbean & Central America
+150012,388103,7,Caribbean & Central America
+150012,388105,7,Caribbean & Central America
+150012,388107,7,Caribbean & Central America
+150012,388109,7,Caribbean & Central America
+150012,388111,7,Caribbean & Central America
+150012,388113,7,Caribbean & Central America
+150012,388115,7,Caribbean & Central America
+150012,364507,7,Caribbean & Central America
+150012,337189,14,Asia
+150012,387885,14,Arabia & the Red Sea
+150012,387887,14,Arabia & the Red Sea
+150012,387889,14,Arabia & the Red Sea
+150012,387891,14,Arabia & the Red Sea
+150012,387893,14,Arabia & the Red Sea
+150012,387895,14,Arabia & the Red Sea
+150012,387897,14,Arabia & the Red Sea
+150012,387899,14,Arabia & the Red Sea
+150012,387901,14,Arabia & the Red Sea
+150012,387903,15,Arabia & the Red Sea
+150012,387905,15,Arabia & the Red Sea
+150012,387907,15,Arabia & the Red Sea
+150012,387909,14,Arabia & the Red Sea
+150012,387911,14,Arabia & the Red Sea
+150012,387913,14,Arabia & the Red Sea
+150012,387915,8,Arabia & the Red Sea
+150012,387917,8,Arabia & the Red Sea
+150012,387919,8,Arabia & the Red Sea
+150012,387921,7,Arabia & the Red Sea
+150012,387923,7,Arabia & the Red Sea
+150012,387925,7,Arabia & the Red Sea
+150012,387797,15,Arabia & the Red Sea
+150012,387799,14,Arabia & the Red Sea
+150012,387801,14,Arabia & the Red Sea
+150012,387803,14,Arabia & the Red Sea
+150012,387805,14,Asia
+150012,387807,14,Asia
+150012,387809,14,Asia
+150012,387811,14,Asia
+150012,387813,14,Asia
+150012,387815,14,Asia
+150012,387817,14,Asia
+150012,387819,14,Asia
+150012,387821,14,Asia
+150012,387823,14,Asia
+150012,387825,14,Asia
+150012,387827,14,Asia
+150012,387829,14,Asia
+150012,387831,14,Asia
+150012,387833,14,Asia
+150012,387835,14,Asia
+150012,387837,14,Asia
+150012,387839,14,Asia
+150012,387841,14,Asia
+150012,387843,14,Asia
+150012,387845,14,Asia
+150012,387855,14,Asia
+150012,387857,14,Asia
+150012,387859,14,Asia
+150012,387861,14,Asia
+150012,387863,14,Asia
+150012,387865,14,Asia
+150012,387867,14,Asia
+150012,387869,14,Asia
+150012,387871,14,Asia
+150012,387873,14,Asia
+150012,387875,14,Asia
+150012,387877,14,Asia
+150012,387879,14,Arabia & the Red Sea
+150012,387881,14,Arabia & the Red Sea
+150012,387883,14,Arabia & the Red Sea
+150012,388531,14,Scandinavia, the Baltic & UK
+150012,388533,14,Scandinavia, the Baltic & UK
+150012,388535,14,Scandinavia, the Baltic & UK
+150012,389303,7,Caribbean & Central America
+150012,388537,14,Scandinavia, the Baltic & UK
+150012,388539,7,Scandinavia, the Baltic & UK
+150012,388541,7,Scandinavia, the Baltic & UK
+150012,388543,7,Scandinavia, the Baltic & UK
+150012,388545,7,Scandinavia, the Baltic & UK
+150012,388547,13,Scandinavia, the Baltic & UK
+150012,388549,13,Scandinavia, the Baltic & UK
+150012,388551,13,Scandinavia, the Baltic & UK
+150012,388553,13,Scandinavia, the Baltic & UK
+150012,388555,14,Scandinavia, the Baltic & UK
+150012,388557,14,Scandinavia, the Baltic & UK
+150012,388559,14,Scandinavia, the Baltic & UK
+150012,388561,14,Scandinavia, the Baltic & UK
+150012,388563,14,Scandinavia, the Baltic & UK
+150012,388565,14,Scandinavia, the Baltic & UK
+150012,388567,14,Scandinavia, the Baltic & UK
+150012,388569,14,Scandinavia, the Baltic & UK
+150012,388571,7,Scandinavia, the Baltic & UK
+150012,388573,7,Scandinavia, the Baltic & UK
+150012,388575,7,Scandinavia, the Baltic & UK
+150012,388577,7,Scandinavia, the Baltic & UK
+150012,388579,14,Scandinavia, the Baltic & UK
+150012,388581,14,Scandinavia, the Baltic & UK
+150012,388583,14,Scandinavia, the Baltic & UK
+150012,388585,14,Scandinavia, the Baltic & UK
+150012,388587,8,Scandinavia, the Baltic & UK
+150012,388589,8,Scandinavia, the Baltic & UK
+150012,388591,8,Scandinavia, the Baltic & UK
+150012,388593,8,Scandinavia, the Baltic & UK
+150012,388595,14,Scandinavia, the Baltic & UK
+150012,388597,14,Scandinavia, the Baltic & UK
+150012,373901,14,Scandinavia, the Baltic & UK
+150012,388599,14,Scandinavia, the Baltic & UK
+150012,388601,14,Scandinavia, the Baltic & UK
+150012,388603,8,Scandinavia, the Baltic & UK
+150012,388605,8,Scandinavia, the Baltic & UK
+150012,373911,7,Scandinavia, the Baltic & UK
+150012,388607,8,Scandinavia, the Baltic & UK
+150012,388609,8,Scandinavia, the Baltic & UK
+150012,388611,14,Scandinavia, the Baltic & UK
+150012,388613,14,Scandinavia, the Baltic & UK
+150012,388615,14,Scandinavia, the Baltic & UK
+150012,388617,14,Scandinavia, the Baltic & UK
+150012,388619,12,Western Mediterranean
+150012,388621,14,Western Mediterranean
+150012,388623,14,Western Mediterranean
+150012,388625,14,Western Mediterranean
+150012,373921,13,Scandinavia, the Baltic & UK
+150012,388627,14,Western Mediterranean
+150012,388629,3,Scandinavia, the Baltic & UK
+150012,388631,3,Scandinavia, the Baltic & UK
+150012,388633,3,Scandinavia, the Baltic & UK
+150012,388635,6,Western Mediterranean
+150012,373931,14,Scandinavia, the Baltic & UK
+150012,373941,14,Scandinavia, the Baltic & UK
+150012,373951,7,Scandinavia, the Baltic & UK
+150012,387699,14,Asia
+150012,387701,14,Asia
+150012,387703,14,Asia
+150012,387705,14,Asia
+150012,387707,14,Asia
+150012,387709,14,Asia
+150012,387711,14,Asia
+150012,387713,14,Asia
+150012,387715,14,Asia
+150012,387717,14,Asia
+150012,387719,14,Asia
+150012,387721,14,Asia
+150012,387769,7,Western Mediterranean
+150012,387771,7,Western Mediterranean
+150012,387773,7,Western Mediterranean
+150012,387775,14,Arabia & the Red Sea
+150012,387777,14,Arabia & the Red Sea
+150012,387779,14,Arabia & the Red Sea
+150012,387781,15,Arabia & the Red Sea
+150012,387783,15,Arabia & the Red Sea
+150012,387785,15,Arabia & the Red Sea
+150012,387787,14,Arabia & the Red Sea
+150012,387789,14,Arabia & the Red Sea
+150012,387791,14,Arabia & the Red Sea
+150012,387793,15,Arabia & the Red Sea
+150012,387795,15,Arabia & the Red Sea
+150012,388981,7,Caribbean & Central America
+150012,388983,7,Caribbean & Central America
+150012,388985,7,Caribbean & Central America
+150012,388987,15,Caribbean & Central America
+150012,388989,13,Caribbean & Central America
+150012,388979,7,Caribbean & Central America
+150012,389129,7,Western Mediterranean
+150012,389131,7,Western Mediterranean
+150012,389133,7,Western Mediterranean
+150012,389135,7,Western Mediterranean
+150012,389137,7,Western Mediterranean
+150012,373961,14,Scandinavia, the Baltic & UK
+150012,373971,8,Scandinavia, the Baltic & UK
+150012,373981,14,Scandinavia, the Baltic & UK
+150012,373991,8,Scandinavia, the Baltic & UK
+150012,374001,14,Scandinavia, the Baltic & UK
+150012,373333,7,Caribbean & Central America
+150012,388791,7,Scandinavia, the Baltic & UK
+150012,373343,7,Caribbean & Central America
+150012,373353,7,Caribbean & Central America
+150012,373433,15,Caribbean & Central America
+150012,373443,14,Caribbean & Central America
+150012,374013,14,Western Mediterranean
