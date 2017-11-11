@@ -1,3 +1,3 @@
 SELECT ShipID, Name
-FROM CruiseShip
+FROM Ship
 ORDER BY Name ASC;

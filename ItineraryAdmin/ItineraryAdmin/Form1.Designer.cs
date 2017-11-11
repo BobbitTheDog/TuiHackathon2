@@ -39,6 +39,7 @@
             this.lstAssignedPorts = new System.Windows.Forms.ListBox();
             this.lstUnassignedPorts = new System.Windows.Forms.ListBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.cmbStartPort = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitForm)).BeginInit();
             this.splitForm.Panel1.SuspendLayout();
             this.splitForm.Panel2.SuspendLayout();
@@ -66,8 +67,8 @@
             // 
             this.splitForm.Panel2.Controls.Add(this.lblNoneSelected);
             this.splitForm.Panel2.Controls.Add(this.splitControls);
-            this.splitForm.Size = new System.Drawing.Size(284, 306);
-            this.splitForm.SplitterDistance = 55;
+            this.splitForm.Size = new System.Drawing.Size(284, 367);
+            this.splitForm.SplitterDistance = 65;
             this.splitForm.TabIndex = 0;
             // 
             // lblShips
@@ -113,21 +114,22 @@
             // splitControls.Panel2
             // 
             this.splitControls.Panel2.Controls.Add(this.btnSubmit);
-            this.splitControls.Size = new System.Drawing.Size(284, 247);
-            this.splitControls.SplitterDistance = 201;
+            this.splitControls.Size = new System.Drawing.Size(284, 298);
+            this.splitControls.SplitterDistance = 242;
             this.splitControls.TabIndex = 0;
             // 
             // grpPorts
             // 
             this.grpPorts.AutoSize = true;
             this.grpPorts.Controls.Add(this.btnUnassign);
+            this.grpPorts.Controls.Add(this.cmbStartPort);
             this.grpPorts.Controls.Add(this.btnAssign);
             this.grpPorts.Controls.Add(this.lstAssignedPorts);
             this.grpPorts.Controls.Add(this.lstUnassignedPorts);
             this.grpPorts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpPorts.Location = new System.Drawing.Point(0, 0);
             this.grpPorts.Name = "grpPorts";
-            this.grpPorts.Size = new System.Drawing.Size(284, 201);
+            this.grpPorts.Size = new System.Drawing.Size(284, 242);
             this.grpPorts.TabIndex = 1;
             this.grpPorts.TabStop = false;
             this.grpPorts.Text = "Destination Ports";
@@ -187,11 +189,21 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // cmbStartPort
+            // 
+            this.cmbStartPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStartPort.FormattingEnabled = true;
+            this.cmbStartPort.Location = new System.Drawing.Point(12, 206);
+            this.cmbStartPort.Name = "cmbStartPort";
+            this.cmbStartPort.Size = new System.Drawing.Size(260, 21);
+            this.cmbStartPort.TabIndex = 0;
+            this.cmbStartPort.SelectedIndexChanged += new System.EventHandler(this.cmbShips_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 306);
+            this.ClientSize = new System.Drawing.Size(284, 367);
             this.Controls.Add(this.splitForm);
             this.Name = "Form1";
             this.Text = "Itinerary Control Panel";
@@ -224,6 +236,7 @@
         private System.Windows.Forms.ListBox lstUnassignedPorts;
         private System.Windows.Forms.Button btnUnassign;
         private System.Windows.Forms.Button btnAssign;
+        private System.Windows.Forms.ComboBox cmbStartPort;
     }
 }
 

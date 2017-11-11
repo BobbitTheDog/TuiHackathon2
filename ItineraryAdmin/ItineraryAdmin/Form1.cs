@@ -13,34 +13,35 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using System.Resources;
-using ItineraryAdmin.Properties;
+using HackathonFramework;
 
 namespace ItineraryAdmin
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, int> ships;
-        Dictionary<string, int> ports;
+        //Dictionary<string, int> ships;
+        List<Ship> allShips;
+        List<Port> allPorts;
 
-        Dictionary<string, IEnumerable<string>> shipPorts = new Dictionary<string, IEnumerable<string>>();
+        //Dictionary<int, IEnumerable<string>> shipPorts = new Dictionary<int, IEnumerable<string>>();
         string selectedShip;
 
         public Form1()
         {
             InitializeComponent();
 
-            LoadShipList();
-            LoadPortList();
+            LoadShips();
+            LoadPorts();
         }
 
-        private void LoadShipList()
+        private void LoadShips()
         {
             using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(Resources.CruiseShip_ListNameAndId, conn))
+            using (var cmd = new MySqlCommand(SqlStrings.Ship_ListNameAndID, conn))
             using (var da = new MySqlDataAdapter(cmd))
             using (var data = new DataTable())
             {
-                ships = new Dictionary<string, int>();
+                allShips = new List<Ship>();
                 cmbShips.Items.Clear();
 
                 da.Fill(data);
@@ -48,57 +49,59 @@ namespace ItineraryAdmin
                 cmbShips.Items.Add("");
                 foreach (DataRow row in data.Rows.OfType<DataRow>())
                 {
-                    ships.Add(row["Name"].ToString(), (int)row["ShipID"]);
+                    var ship = new Ship(row["ShipID"].ToString(), row["Name"].ToString());
+                    ship.LoadItinerary();
+                    allShips.Add(ship);
                     cmbShips.Items.Add(row["Name"].ToString());
                 }
             }
         }
 
-        private void LoadPortList()
+        private void LoadPorts()
         {
             using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(Resources.Seaport_ListNameAndId, conn))
+            using (var cmd = new MySqlCommand(SqlStrings.Port_ListNameAndID, conn))
             using (var da = new MySqlDataAdapter(cmd))
             using (var data = new DataTable())
             {
-                ports = new Dictionary<string, int>();
-
-                lstUnassignedPorts.Items.Clear();
-                lstAssignedPorts.Items.Clear();
-
                 da.Fill(data);
+                allPorts = data.AsEnumerable().Select(row => new Port(row["PortID"].ToString(), row["Name"].ToString())).ToList();
+            }
 
-                ports = data.AsEnumerable().ToDictionary(r => r["Name"].ToString(), r => (int)r["SeaportID"]);
-                ports.Keys.ToList().ForEach(x => lstUnassignedPorts.Items.Add(x));
+            SetPortLists();
+        }
+
+        private void ResetPortLists()
+        {
+            lstUnassignedPorts.Items.Clear();
+            lstAssignedPorts.Items.Clear();
+            allPorts.ForEach(port => lstUnassignedPorts.Items.Add(port.Name));
+        }
+
+        private void SetPortLists(Ship ship = null)
+        {
+            ResetPortLists();
+
+            if (ship == null) return;
+
+            foreach (var port in ship.Ports)
+            {
+                MoveToAssigned(port.Name);
             }
         }
 
-        private void LoadItineraryData(string shipName)
+        private EnumerableRowCollection<DataRow> GetShipItinerary(int shipID)
         {
-            LoadPortList();
-
-            if (shipPorts.Keys.Contains(shipName))
-            {
-                foreach (var port in shipPorts[shipName])
-                {
-                    AssignPort(port);
-                }
-                return;
-            }
-
             using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(Resources.ItineraryStop_ListByShipName, conn))
+            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_ListByShipID, conn))
             using (var da = new MySqlDataAdapter(cmd))
             using (var data = new DataTable())
             {
-                cmd.Parameters.AddWithValue("@ShipName", shipName);
+                cmd.Parameters.AddWithValue("@ShipID", shipID);
 
                 da.Fill(data);
 
-                foreach (var row in data.Rows.OfType<DataRow>())
-                {
-                    AssignPort(row["Name"].ToString());
-                }
+                return data.AsEnumerable();
             }
         }
 
@@ -123,47 +126,51 @@ namespace ItineraryAdmin
 
             selectedShip = cmbShips.SelectedItem.ToString();
 
-            if (!string.IsNullOrWhiteSpace(cmbShips.SelectedItem.ToString()))
+            if (!string.IsNullOrWhiteSpace(selectedShip))
             {
-                LoadItineraryData(cmbShips.SelectedItem.ToString());
+                SetPortLists(allShips.First(ship => ship.Name == selectedShip));
                 EnableListControls();
                 return;
             }
 
-            LoadPortList();
+            LoadPorts();
             LockListControls();
         }
 
         private void StoreChanges()
         {
-            shipPorts[selectedShip] = lstAssignedPorts.Items.OfType<string>().ToList();
+            var ship = allShips.First(s => s.Name == selectedShip);
+            ship.Ports.Clear();
+            ship.Ports.AddRange(allPorts.Where(p => lstAssignedPorts.Items.Contains(p.Name)));
         }
 
         private void btnUnassign_Click(object sender, EventArgs e)
         {
             var selections = lstAssignedPorts.SelectedItems.OfType<string>().ToList();
-            selections.ForEach(port => UnassignPort(port));
+            selections.ForEach(port => MoveToUnassigned(port));
 
-            btnSubmit.Enabled = shipPorts.Count > 0;
+            btnSubmit.Enabled = allShips.Any(ship => ship.Modified);
         }
 
-        private void UnassignPort(string port)
+        private void MoveToUnassigned(string port)
         {
             lstAssignedPorts.Items.Remove(port);
+            cmbStartPort.Items.Remove(port);
             lstUnassignedPorts.Items.Add(port);
         }
 
         private void btnAssign_Click(object sender, EventArgs e)
         {
             var selections = lstUnassignedPorts.SelectedItems.OfType<string>().ToList();
-            selections.ForEach(port => AssignPort(port));
+            selections.ForEach(port => MoveToAssigned(port));
 
-            btnSubmit.Enabled = shipPorts.Count > 0;
+            btnSubmit.Enabled = allShips.Any(ship => ship.Modified);
         }
 
-        private void AssignPort(string port)
+        private void MoveToAssigned(string port)
         {
             lstAssignedPorts.Items.Add(port);
+            cmbStartPort.Items.Add(port);
             lstUnassignedPorts.Items.Remove(port);
         }
 
@@ -173,43 +180,30 @@ namespace ItineraryAdmin
             SaveChanges();
         }
 
-        private void SaveChanges()
+        private async void SaveChanges()
         {
-            using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
+            var tasks = new List<Task>();
+            foreach (var ship in allShips)
             {
-                conn.Open();
-                using (var clearCmd = new MySqlCommand(Resources.ItineraryStop_ClearByShipID, conn))
-                {
-                    clearCmd.Parameters.Add("@shipID", MySqlDbType.Int16);
-
-                    foreach (var shipName in shipPorts.Keys)
-                    {
-                        var shipID = ships[shipName];
-
-                        clearCmd.Parameters["@shipID"].Value = shipID;
-                        clearCmd.ExecuteNonQuery();
-
-                        using (var insertCmd = new MySqlCommand(Resources.ItineraryStop_Insert, conn))
-                        {
-                            insertCmd.Parameters.Add("@shipID", MySqlDbType.Int16);
-                            insertCmd.Parameters.Add("@seaportID", MySqlDbType.Int16);
-
-                            foreach (var seaportName in shipPorts[shipName])
-                            {
-                                var seaportID = ports[seaportName];
-
-                                insertCmd.Parameters["@shipID"].Value = shipID;
-                                insertCmd.Parameters["@seaportID"].Value = seaportID;
-
-                                insertCmd.ExecuteNonQuery();
-                            }
-                        }
-                    }
-                }
+                tasks.Add(ship.SaveItineraryAsync());
             }
 
-            shipPorts.Clear();
             btnSubmit.Enabled = false;
+
+            await Task.WhenAll(tasks);
+        }
+
+        private async Task UpdateItineraryOrderAsync(int shipID)
+        {
+            var stops = GetShipItinerary(shipID);
+            // run them against a travelling salesman algorithm
+            var route = await CalculateRoute(stops);
+            //store the order in the DB
+        }
+
+        private async Task<EnumerableRowCollection<DataRow>> CalculateRoute(EnumerableRowCollection<DataRow> stops)
+        {
+            throw new NotImplementedException();
         }
 
         private void lstUnassignedPorts_SelectedIndexChanged(object sender, EventArgs e)

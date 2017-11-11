@@ -1,16 +1,14 @@
-﻿using ItineraryAdmin.Properties;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace ItineraryAdmin
+namespace HackathonFramework
 {
-    class Ship : ICloneable, IEquatable<Ship>
+    public class Ship : IEquatable<Ship>
     {
         private Ship lastSaved;
 
@@ -41,7 +39,7 @@ namespace ItineraryAdmin
             }
         }
 
-        public bool Modified => !Equals(lastSaved);
+        public bool Modified => lastSaved == null ? false : !Equals(lastSaved);
 
         public Ship(string id, string name)
         {
@@ -49,10 +47,10 @@ namespace ItineraryAdmin
             _shipName = name;
         }
 
-        internal void LoadItinerary()
+        public void LoadItinerary()
         {
             using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(Resources.ItineraryStop_ListByShipID, conn))
+            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_ListByShipID, conn))
             using (var da = new MySqlDataAdapter(cmd))
             using (var data = new DataTable())
             {
@@ -65,7 +63,7 @@ namespace ItineraryAdmin
             }
         }
 
-        public object Clone()
+        private Ship Clone()
         {
             var newShip = new Ship(ID, Name);
             newShip.Ports.AddRange(Ports);
@@ -84,20 +82,28 @@ namespace ItineraryAdmin
                 );
         }
 
-        internal async Task<bool> SaveItineraryAsync()
+        public async Task<bool> SaveItineraryAsync()
         {
+            List<Task<int>> tasks = new List<Task<int>>();
+
             using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(Resources.ItineraryStop_Insert))
+            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_Insert))
             {
                 cmd.Parameters.AddWithValue("@shipID", ID);
-                cmd.Parameters.Add("@seaportID", MySqlDbType.String);
+                cmd.Parameters.Add("@portID", MySqlDbType.String);
 
                 foreach (Port port in Ports)
                 {
-                    cmd.Parameters["@seaportID"].Value = port.ID;
+                    cmd.Parameters["@portID"].Value = port.ID;
+                    tasks.Add(cmd.ExecuteNonQueryAsync());
                 }
             }
 
+            var rowsAffected = await Task.WhenAll(tasks);
+
+            lastSaved = Clone();
+
+            return !rowsAffected.Contains(0);
         }
     }
 }

@@ -1,0 +1,27 @@
+USE `TuiHack2`;
+
+DELETE FROM Ship WHERE ShipID <> 'asdf';
+
+INSERT INTO Ship(
+	ShipID,
+	NAME
+	)
+VALUES(
+	'150012','MARELLA DISCOVERY'
+);
+
+INSERT INTO Ship(
+	ShipID,
+	NAME
+	)
+VALUES(
+	'150013','MARELLA DISCOVERY 2'
+);
+
+INSERT INTO Ship(
+	ShipID,
+	NAME
+	)
+VALUES(
+	'150014','MARELLA EXPLORER'
+);
