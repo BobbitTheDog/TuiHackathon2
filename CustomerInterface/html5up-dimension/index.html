@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+	<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+	<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+	<script src="assets/js/map.js"></script>
+    <script src="assets/js/script.js"></script>
+	<head>
+            
+			
+            <title>Book Excursions</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+            <link rel="stylesheet" href="assets/css/main.css" />
+            <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
+
+            <!-- Wrapper -->
+            <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="content">
+                    <div class="inner">
+			<span class="image main"><img src="images/TUILogo.png" alt="TUILogo" height="300" /></span>
+                        	<form>
+                                	<label>Cabin Number:</label>
+					<input type = "text"
+					id = "cabinID"
+					placeholder = "Cabin Number Here"
+                                        required/>
+                                        
+				</form>
+                    </div>
+                </div>
+		<nav>
+                    <ul>
+                        <li><a id="booklink" href="#book" class="disabled">Book</a></li>
+						<li><a id="managelink" href="#manage" class="disabled">Manage</a></li>
+                    </ul>
+		</nav>
+            </header>
+        	<div id="main">
+        		<article id="book">
+                		<h2 class="major">Book</h2>
+                                <form>
+                                    <label>Excursion: </label>
+                                    <select name="Excursions"
+                                        id="excursionID"
+                                        required>
+                                        <option value=null></option>
+                                        
+                                    </select>
+                                    <br>
+                                    <label>Number of Passengers Attending</label>
+                                    <input type="number"
+                                           id="nopass"
+                                           placeholder="0"
+                                           required/>
+                                    <br>
+                                    <input type="Submit"
+                                            id="Submit"
+                                            value="Submit" />
+                                </form>
+								<div id="chartdiv"></div>
+								
+
+			</article>
+			<article id="manage">
+				<h2 class="major">Manage Bookings</h2>
+					<form>
+						<label>Excursion: </label>
+						<select name="Manage Excursions"
+							id="exmanageID"
+							required>
+							<option value=null></option>
+						</select>
+						<br>
+						<input type="number"
+							id="nopassmanage"
+							placeholder="0"
+							required/>
+						<br>
+						<input type="button"
+							id="update"
+							value="Update" />
+						<input type="button"
+							id="cancel"
+							value="Cancel" />
+			</article>			
+			
+				
+							
+
+		</div>
+            </div>
+
+            <div id="bg"></div>
+
+	</body>
+</html>
