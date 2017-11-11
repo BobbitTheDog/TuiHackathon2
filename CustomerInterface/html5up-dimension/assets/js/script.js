@@ -1,5 +1,9 @@
 var cabID;
 var cruiseID;
+var lat = [];
+var lon = [];
+var images = [];
+
 $(document).ready(function() {
     $("form").on("submit", formSubmitHandler);
 	$("#update").on("click", updateSubmitHandler);
@@ -9,7 +13,9 @@ $(document).ready(function() {
     $(window).on('hashchange', function() {
         if (location.hash.slice(1) === "book"||location.hash.slice(1) === "manage") {
             cabID = $("#cabinID").val();
+			getCruise(cabID);
 			getExcursions(cabID);
+			getPorts();
         }
 		else{
 			$("#excursionID").val("");
@@ -19,6 +25,52 @@ $(document).ready(function() {
 		$("#cabinID").val("");
 		$("#cabinID").trigger("input");
     });
+	
+	
+	AmCharts.ready(function() {
+	for (var i = 0; i < lat.length;i++) {
+		AmCharts.loadFile("http://api.openweathermap.org/data/2.5/weather?lat=" + lat[i] + "&lon=" + lon[i] + "&units=metric&appid=5a8c4ac04c8d7c3d4e7491a255bdb60f", {}, function(json) {
+			var data = AmCharts.parseJSON(json);
+			var lines = [];
+			var city = data;
+			var weather = city.weather.pop();
+			images.push({
+				"latitude": city.coord.lat,
+				"longitude": city.coord.lon,
+				"imageURL": "http://openweathermap.org/img/w/" + weather.icon + ".png",
+				"width": 50,
+				"height": 50,
+				"label": city.name + ": " + Math.round(city.main.temp) + "C",
+				"description": "Temp: " + city.main.temp + "C \n Humidity: " + city.main.humidity + "\n MaxTemp: " + city.main.temp_max + "C\n MinTemp: " + city.main.temp_min + "C"
+			});
+    	});
+	};
+	
+    var map = AmCharts.makeChart("chartdiv", {
+      "type": "map",
+      "theme": "light",
+	  "projection": "miller",
+      "dataProvider": {
+		"getAreasFromMap": true,
+        "map": "worldLow",
+       // "zoomLevel": 5,
+        //"zoomLongitude": 10,
+        //"zoomLatitude": 50,
+        "images": images,
+      },
+      "imagesSettings": {
+        "labelRollOverColor": "#000",
+        "labelPosition": "bottom"
+      },
+      "areasSettings": {
+		"autoZoom": true,
+		"selectedColor": "#CC0000",
+        "alpha": 0.8
+      },
+	  "smallMap": {}
+    });
+  });
+	
 	
 });
 
@@ -31,6 +83,18 @@ function cabinID_oninput() {
         $("#booklink").addClass("disabled");
 		$("#managelink").addClass("disabled");
     }
+}
+
+function getCruise(cabinID){
+	$.ajax({
+		type: "GET",
+        url: "http://localhost:80/excursions?id=" + cabinID,
+        dataType: "json",
+        cache: false,
+        success: function(result) {
+            cruiseID = result.cruiseID
+        }
+	});
 }
 
 function getExcursions(cabinID) {
@@ -58,6 +122,21 @@ function getExcursions(cabinID) {
 		*
 		*/
     });
+}
+
+function getPorts(){
+	$.ajax({
+		type: "GET",
+        url: "http://localhost:80/ports?id=" + cruiseID,
+        dataType: "json",
+        cache: false,
+        success: function(result) {
+            $.each(result, function(index, lati, loni) {
+                lat.push(lati),
+				lon.push(loni)
+            });
+        }
+	});
 }
 
 function formSubmitHandler(event) {
