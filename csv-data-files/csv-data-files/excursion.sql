@@ -1,3 +1,7 @@
+USE `TuiHack2`;
+
+DELETE FROM Excursion;
+
 INSERT INTO Excursion(ExcursionID, PortID, Name)
 VALUES('994763','CL0405','STINGRAY CITY SANDBAR & BEACH BREAK');
 

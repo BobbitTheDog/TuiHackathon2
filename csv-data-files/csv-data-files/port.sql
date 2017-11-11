@@ -1,4 +1,6 @@
-DELETE FROM PORT WHERE PortID <> 'asdf';
+USE `TuiHack2`;
+
+DELETE FROM PORT;
 
 INSERT INTO Port(PortID, Name, Location)
 VALUES
