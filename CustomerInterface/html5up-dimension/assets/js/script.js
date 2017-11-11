@@ -88,7 +88,7 @@ function cabinID_oninput() {
 function getCruise(cabinID){
 	$.ajax({
 		type: "GET",
-        url: "http://localhost:80/excursions?id=" + cabinID,
+        url: "http://localhost:56709/API/excursions?id=" + cabinID,
         dataType: "json",
         cache: false,
         success: function(result) {
@@ -101,7 +101,7 @@ function getExcursions(cabinID) {
     console.log("GETTING FOR: " + cabinID);
     $.ajax({
         type: "GET",
-        url: "http://localhost:80/excursions?id=" + cabinID,
+        url: "http://localhost:56709/API/excursions?id=" + cabinID,
         dataType: "json",
         cache: false,
         success: function(result) {
@@ -127,7 +127,7 @@ function getExcursions(cabinID) {
 function getPorts(){
 	$.ajax({
 		type: "GET",
-        url: "http://localhost:80/ports?id=" + cruiseID,
+        url: "http://localhost:56709/API/ports?id=" + cruiseID,
         dataType: "json",
         cache: false,
         success: function(result) {
@@ -156,7 +156,7 @@ function formSubmitHandler(event) {
         // AJAX Code To Submit Form.
         $.ajax({
             type: "POST",
-            url: "http://localhost:80/book",
+            url: "http://localhost:56709/API/book",
             data: dataString,
             cache: false,
             success: function(result) {
@@ -184,7 +184,7 @@ function updateSubmitHandler(event){
         // AJAX Code To Submit Form.
         $.ajax({
             type: "POST",
-            url: "http://localhost:80/book",
+            url: "http://localhost:56709/API/book",
             data: dataString,
             cache: false,
             success: function(result) {
@@ -200,7 +200,7 @@ function cancelSubmitHandler(event){
 	
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:80/cancel",
+		url: "http://localhost:56709/API/cancel",
 		data: "excursionID="+excursionID,
 		success: function(result) {
                 alert(result);
