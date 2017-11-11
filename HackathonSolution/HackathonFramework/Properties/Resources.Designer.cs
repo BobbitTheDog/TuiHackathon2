@@ -61,7 +61,17 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT * FROM Itinerary
+        ///   Looks up a localized string similar to SELECT * FROM Booking
+        ///WHERE CabinID = @cabinID.
+        /// </summary>
+        internal static string Bookings_GetByCabinID {
+            get {
+                return ResourceManager.GetString("Bookings_GetByCabinID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT Itinerary, Name FROM Itinerary
         ///ORDER BY ItineraryID ASC;.
         /// </summary>
         internal static string Itinerary_ListAll {

@@ -49,7 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Booking.cs" />
+    <Compile Include="BookingStatus.cs" />
     <Compile Include="Itinerary.cs" />
+    <Compile Include="Passenger.cs" />
     <Compile Include="Port.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="SqlStrings.cs" />
@@ -90,6 +93,7 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Resource Include="sql\Bookings_GetByCabinID.sql" />
     <Resource Include="sql\Itinerary_ListAll.sql" />
   </ItemGroup>
   <ItemGroup>

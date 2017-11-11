@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace HackathonAPI.Controllers
 {
-    public class ShipController : ApiController
+    public class ShipsController : ApiController
     {
         public IEnumerable<Ship> GetAllShips()
         {

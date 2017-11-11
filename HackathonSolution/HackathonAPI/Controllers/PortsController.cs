@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace HackathonAPI.Controllers
 {
-    public class PortController : ApiController
+    public class PortsController : ApiController
     {
         public IEnumerable<Port> GetAllPorts()
         {

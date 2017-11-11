@@ -17,5 +17,6 @@ namespace HackathonFramework
         public static string PortOfCall_Update => Resources.PortOfCall_Update;
         public static string Ship_ListNameAndID => Resources.Ship_ListNameAndID;
         public static string Itinerary_ListAll => Resources.Itinerary_ListAll;
+        public static string Bookings_GetByCabinID => Resources.Bookings_GetByCabinID;
     }
 }
