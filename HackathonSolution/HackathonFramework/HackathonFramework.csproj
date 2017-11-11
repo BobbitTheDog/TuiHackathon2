@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A2A32006-9540-43A3-8E90-C0E7DE4A825B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{791596B2-4E8B-4164-BD81-8964AF89FA9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ItineraryCleanser</RootNamespace>
-    <AssemblyName>ItineraryCleanser</AssemblyName>
+    <RootNamespace>HackathonFramework</RootNamespace>
+    <AssemblyName>HackathonFramework</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -38,6 +35,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,12 +45,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Itinerary.cs" />
+    <Compile Include="Port.cs" />
+    <Compile Include="Ship.cs" />
+    <Compile Include="SqlStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlTasks.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Resource Include="sql\Port_GetDistances.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sql\Ship_ListNameAndID.sql" />
+    <Resource Include="sql\PortOfCall_Update.sql" />
+    <Resource Include="sql\PortOfCall_ListByShipID.sql" />
+    <Resource Include="sql\PortOfCall_Insert.sql" />
+    <Resource Include="sql\PortOfCall_ClearByShipID.sql" />
+    <Resource Include="sql\Port_ListNameAndID.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="docs\MySqlCommand.xml" />
@@ -66,12 +86,11 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Resource Include="sql\Itinerary_ListAll.sql" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HackathonFramework\HackathonFramework.csproj">
-      <Project>{791596b2-4e8b-4164-bd81-8964af89fa9a}</Project>
-      <Name>HackathonFramework</Name>
-    </ProjectReference>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

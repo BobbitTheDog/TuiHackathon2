@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItineraryCleanser", "Itiner
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonFramework", "HackathonFramework\HackathonFramework.csproj", "{791596B2-4E8B-4164-BD81-8964AF89FA9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonAPI", "HackathonAPI\HackathonAPI.csproj", "{C925D8E3-49EA-4C22-BC04-1E85E4DE2D19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{791596B2-4E8B-4164-BD81-8964AF89FA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{791596B2-4E8B-4164-BD81-8964AF89FA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{791596B2-4E8B-4164-BD81-8964AF89FA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C925D8E3-49EA-4C22-BC04-1E85E4DE2D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C925D8E3-49EA-4C22-BC04-1E85E4DE2D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C925D8E3-49EA-4C22-BC04-1E85E4DE2D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C925D8E3-49EA-4C22-BC04-1E85E4DE2D19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

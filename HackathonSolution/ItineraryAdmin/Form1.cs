@@ -1,29 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
-using System.Configuration;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.IO;
-using System.Reflection;
-using System.Resources;
 using HackathonFramework;
+using System.Data;
 
 namespace ItineraryAdmin
 {
     public partial class Form1 : Form
     {
-        //Dictionary<string, int> ships;
-        List<Ship> allShips;
+        List<Ship> allShips = new List<Ship>();
         List<Port> allPorts;
 
-        //Dictionary<int, IEnumerable<string>> shipPorts = new Dictionary<int, IEnumerable<string>>();
         string selectedShip;
 
         public Form1()
@@ -36,37 +25,16 @@ namespace ItineraryAdmin
 
         private void LoadShips()
         {
-            using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(SqlStrings.Ship_ListNameAndID, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
-                allShips = new List<Ship>();
-                cmbShips.Items.Clear();
+            cmbShips.Items.Clear();
+            cmbShips.Items.Add("");
 
-                da.Fill(data);
-
-                cmbShips.Items.Add("");
-                foreach (DataRow row in data.Rows.OfType<DataRow>())
-                {
-                    var ship = new Ship(row["ShipID"].ToString(), row["Name"].ToString());
-                    ship.LoadItinerary();
-                    allShips.Add(ship);
-                    cmbShips.Items.Add(row["Name"].ToString());
-                }
-            }
+            allShips = SqlTasks.GetAllShips();
+            allShips.ForEach(ship => cmbShips.Items.Add(ship.Name));
         }
 
         private void LoadPorts()
         {
-            using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(SqlStrings.Port_ListNameAndID, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
-                da.Fill(data);
-                allPorts = data.AsEnumerable().Select(row => new Port(row["PortID"].ToString(), row["Name"].ToString())).ToList();
-            }
+            allPorts = SqlTasks.GetAllPorts();
 
             SetPortLists();
         }
@@ -87,21 +55,6 @@ namespace ItineraryAdmin
             foreach (var port in ship.Ports)
             {
                 MoveToAssigned(port.Name);
-            }
-        }
-
-        private EnumerableRowCollection<DataRow> GetShipItinerary(int shipID)
-        {
-            using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_ListByShipID, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
-                cmd.Parameters.AddWithValue("@ShipID", shipID);
-
-                da.Fill(data);
-
-                return data.AsEnumerable();
             }
         }
 
@@ -191,19 +144,6 @@ namespace ItineraryAdmin
             btnSubmit.Enabled = false;
 
             await Task.WhenAll(tasks);
-        }
-
-        private async Task UpdateItineraryOrderAsync(int shipID)
-        {
-            var stops = GetShipItinerary(shipID);
-            // run them against a travelling salesman algorithm
-            var route = await CalculateRoute(stops);
-            //store the order in the DB
-        }
-
-        private async Task<EnumerableRowCollection<DataRow>> CalculateRoute(EnumerableRowCollection<DataRow> stops)
-        {
-            throw new NotImplementedException();
         }
 
         private void lstUnassignedPorts_SelectedIndexChanged(object sender, EventArgs e)

@@ -49,18 +49,9 @@ namespace HackathonFramework
 
         public void LoadItinerary()
         {
-            using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_ListByShipID, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
-                cmd.Parameters.AddWithValue("@ShipID", ID);
+            Ports.Clear();
+            Ports.AddRange(SqlTasks.GetDestinationPorts(ID));
 
-                da.Fill(data);
-
-                Ports.Clear();
-                Ports.AddRange(data.AsEnumerable().Select(row => new Port(row["portID"].ToString(), row["Name"].ToString())));
-            }
         }
 
         private Ship Clone()

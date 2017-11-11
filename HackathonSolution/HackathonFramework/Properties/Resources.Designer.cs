@@ -61,6 +61,16 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM Itinerary
+        ///ORDER BY ItineraryID ASC;.
+        /// </summary>
+        internal static string Itinerary_ListAll {
+            get {
+                return ResourceManager.GetString("Itinerary_ListAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT port1.portID
         ///	,port2.portID
         ///	,st_distance_sphere(port1.location, port2.location) distance
