@@ -24,7 +24,7 @@ namespace HackathonFramework
             }
         }
 
-        public static List<Ship> GetAllShips()
+        public static List<Ship> GetAllShips(bool loadItinerary = true)
         {
             using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
             using (var cmd = new MySqlCommand(SqlStrings.Ship_ListNameAndID, conn))
@@ -32,14 +32,16 @@ namespace HackathonFramework
             using (var data = new DataTable())
             {
                 da.Fill(data);
-                var allships = new List<Ship>();
+                var allShips = new List<Ship>();
                 foreach (DataRow row in data.Rows.OfType<DataRow>())
                 {
                     var ship = new Ship(row["ShipID"].ToString(), row["Name"].ToString());
-                    ship.LoadItinerary();
+                    if (loadItinerary) ship.LoadItinerary();
+
+                    allShips.Add(ship);
                 }
 
-                return allships;
+                return allShips;
             }
         }
 

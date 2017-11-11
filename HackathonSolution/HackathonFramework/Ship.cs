@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -19,6 +20,8 @@ namespace HackathonFramework
         public string Name => _shipName;
 
         private readonly List<Port> _ports = new List<Port>();
+
+        [JsonIgnore]
         public List<Port> Ports => _ports;
 
         private string _startPort;
@@ -39,6 +42,7 @@ namespace HackathonFramework
             }
         }
 
+        [JsonIgnore]
         public bool Modified => lastSaved == null ? false : !Equals(lastSaved);
 
         public Ship(string id, string name)
