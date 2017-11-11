@@ -1,4 +1,4 @@
-const location = "Onboard";
+const currentLocation = "Onboard";
 
 $(document).ready(function() {
 	console.log("Page loaded.");
