@@ -24,6 +24,18 @@ namespace HackathonFramework
             }
         }
 
+        public List<Excursion> object GetAllExcursions()
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Excursion_ListAll, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                da.Fill(data);
+                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["SeaportID"].ToString(), Int32.Parse(row["NoOfCoaches"])));
+            }
+        }
+
         public static List<Passenger> GetAllPassengers()
         {
             using (var conn = Conn)
