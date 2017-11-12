@@ -13,7 +13,7 @@ namespace HackathonFramework
         public static string Port_ListNameAndID => Resources.Port_ListNameAndID;
         public static string PortOfCall_ClearByShipID => Resources.PortOfCall_ClearByShipID;
         public static string PortOfCall_Insert => Resources.PortOfCall_Insert;
-        public static string PortOfCall_ListByShipID => Resources.PortOfCall_ListByShipID;
+        public static string PortOfCall_ListByItineraryID => Resources.PortOfCall_ListByItineraryID;
         public static string PortOfCall_Update => Resources.PortOfCall_Update;
         public static string Ship_ListNameAndID => Resources.Ship_ListNameAndID;
         public static string Itinerary_ListAll => Resources.Itinerary_ListAll;

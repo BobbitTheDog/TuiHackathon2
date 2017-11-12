@@ -1,2 +1,2 @@
-﻿SELECT Itinerary, Name FROM Itinerary
+﻿SELECT * FROM Itinerary
 ORDER BY ItineraryID ASC;

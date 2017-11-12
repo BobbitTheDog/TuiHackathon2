@@ -26,7 +26,5 @@ namespace HackathonFramework
             _portID = seapID;
             _numberOfCoaches = numCoaches;
         }
-
-
     }
 }

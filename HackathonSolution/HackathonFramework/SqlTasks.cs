@@ -24,6 +24,33 @@ namespace HackathonFramework
             }
         }
 
+        internal static List<PortOfCall> GetPortsOfCall(string itineraryID)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_ListByItineraryID, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                cmd.Parameters.AddWithValue("@itineraryID", itineraryID);
+
+                da.Fill(data);
+                return data.AsEnumerable().Select(row => new PortOfCall(row["PortOfCallID"].ToString(), row["ItineraryID"].ToString(), new HackathonFramework.Port(row["PortID"].ToString(), row["Name"].ToString()))).ToList();
+            }
+        }
+
+        public static List<Itinerary> GetAllItineraries()
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Itinerary_ListAll, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                da.Fill(data);
+
+                return data.AsEnumerable().Select(row => new Itinerary(row["ItineraryID"].ToString(), row["Name"].ToString())).ToList();
+            }
+        }
+
         public static List<Excursion> GetAllExcursions()
         {
             using (var conn = Conn)
@@ -60,7 +87,7 @@ namespace HackathonFramework
         public static IEnumerable<Port> GetDestinationPorts(string shipID)
         {
             using (var conn = Conn)
-            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_ListByShipID, conn))
+            using (var cmd = new MySqlCommand(SqlStrings.PortOfCall_ListByItineraryID, conn))
             using (var da = new MySqlDataAdapter(cmd))
             using (var data = new DataTable())
             {

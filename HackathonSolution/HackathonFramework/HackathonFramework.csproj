@@ -56,6 +56,7 @@
     <Compile Include="Passenger.cs" />
     <Compile Include="PassengerLocation.cs" />
     <Compile Include="Port.cs" />
+    <Compile Include="PortOfCall.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="SqlStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,7 +73,7 @@
   <ItemGroup>
     <Resource Include="sql\Ship_ListNameAndID.sql" />
     <Resource Include="sql\PortOfCall_Update.sql" />
-    <Resource Include="sql\PortOfCall_ListByShipID.sql" />
+    <Resource Include="sql\PortOfCall_ListByItineraryID.sql" />
     <Resource Include="sql\PortOfCall_Insert.sql" />
     <Resource Include="sql\PortOfCall_ClearByShipID.sql" />
     <Resource Include="sql\Port_ListNameAndID.sql" />

@@ -61,8 +61,12 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to INSERT INTO Booking
-        ///VALUES(
+        ///   Looks up a localized string similar to INSERT INTO Booking(
+        ///	ExcursionID,
+        ///	CabinID,
+        ///	Status,
+        ///	NumPassengers
+        ///) VALUES (
         ///	@excursionID,
         ///	@cabinID,
         ///	@status,
@@ -95,7 +99,7 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT Itinerary, Name FROM Itinerary
+        ///   Looks up a localized string similar to SELECT * FROM Itinerary
         ///ORDER BY ItineraryID ASC;.
         /// </summary>
         internal static string Itinerary_ListAll {
@@ -188,14 +192,13 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT PortOfCall.*, Port.Name FROM PortOfCall
-        ///INNER JOIN Port ON Port.PortID = PortOfCall.PortID
-        ///WHERE ShipID = @shipID
+        ///   Looks up a localized string similar to SELECT PortOfCall.* FROM PortOfCall
+        ///WHERE ItineraryID = @itineraryID
         ///ORDER BY StopOrder ASC;.
         /// </summary>
-        internal static string PortOfCall_ListByShipID {
+        internal static string PortOfCall_ListByItineraryID {
             get {
-                return ResourceManager.GetString("PortOfCall_ListByShipID", resourceCulture);
+                return ResourceManager.GetString("PortOfCall_ListByItineraryID", resourceCulture);
             }
         }
         
