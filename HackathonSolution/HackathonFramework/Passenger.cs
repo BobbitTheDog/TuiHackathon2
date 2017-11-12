@@ -14,6 +14,9 @@ namespace HackathonFramework
         private readonly string _cabinID;
         public string CabinID => _cabinID;
 
+        private readonly string _shipID;
+        public string ShipID => _shipID;
+
         private readonly string _name;
         public string Name => _name;
 

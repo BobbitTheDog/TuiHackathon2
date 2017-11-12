@@ -61,6 +61,21 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO Booking
+        ///VALUES(
+        ///	@excursionID,
+        ///	@cabinID,
+        ///	@status,
+        ///	@numPassengers
+        ///);.
+        /// </summary>
+        internal static string Booking_Insert {
+            get {
+                return ResourceManager.GetString("Booking_Insert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT * FROM Booking
         ///WHERE CabinID = @cabinID.
         /// </summary>
