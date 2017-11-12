@@ -51,8 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Booking.cs" />
-    <Compile Include="Excursion.cs" />
     <Compile Include="ExcursionAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,7 +98,13 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
-    <Resource Include="excursion_ListAll.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Documents\Hackathon\HackathonSolution\HackathonFramework\HackathonFramework.csproj">
+      <Project>{791596b2-4e8b-4164-bd81-8964af89fa9a}</Project>
+      <Name>HackathonFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

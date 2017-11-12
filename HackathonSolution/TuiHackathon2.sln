@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonAPI", "HackathonAP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassengerLocationWinForm", "PassengerLocationWinForm\PassengerLocationWinForm.csproj", "{A8DD6F1C-F466-4BC6-AB8A-A79464770423}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcursionAdmin", "..\..\..\Source\Repos\TuiHackathon2\AdminGui\AdminGui\ExcursionAdmin.csproj", "{7611B182-2FCE-4021-8E31-376083C748E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcursionAdmin", "..\ExcursionAdmin\ExcursionAdmin\ExcursionAdmin.csproj", "{7611B182-2FCE-4021-8E31-376083C748E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

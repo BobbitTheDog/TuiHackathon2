@@ -1,4 +1,5 @@
 ﻿using AdminGui.Properties;
+using HackathonFramework;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -27,15 +28,8 @@ namespace AdminGui
 
         private void LoadExcursions()
         {
-            using (var conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString))
-            using (var cmd = new MySqlCommand(Resources.excursion_ListAll, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
+            var excursionList = SqlTasks.GetAllExcursions();
 
-                da.Fill(data);
-
-            }
         }
         private void LoadBookings()
         {

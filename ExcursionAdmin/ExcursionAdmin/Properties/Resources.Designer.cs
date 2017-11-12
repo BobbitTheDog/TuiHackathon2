@@ -59,14 +59,5 @@ namespace AdminGui.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string excursion_ListAll {
-            get {
-                return ResourceManager.GetString("excursion_ListAll", resourceCulture);
-            }
-        }
     }
 }

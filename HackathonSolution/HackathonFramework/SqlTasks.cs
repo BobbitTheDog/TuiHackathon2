@@ -24,7 +24,7 @@ namespace HackathonFramework
             }
         }
 
-        public List<Excursion> object GetAllExcursions()
+        public static List<Excursion> GetAllExcursions()
         {
             using (var conn = Conn)
             using (var cmd = new MySqlCommand(SqlStrings.Excursion_ListAll, conn))
@@ -32,51 +32,7 @@ namespace HackathonFramework
             using (var data = new DataTable())
             {
                 da.Fill(data);
-                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["SeaportID"].ToString(), Int32.Parse(row["NoOfCoaches"])));
-            }
-        }
-
-        public static List<Passenger> GetAllPassengers()
-        {
-            using (var conn = Conn)
-            using (var cmd = new MySqlCommand(SqlStrings.Passenger_ListAll, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
-                da.Fill(data);
-                return data.AsEnumerable().Select(row => new Passenger(
-                    row["PassengerID"].ToString(),
-                    row["CabinID"].ToString(),
-                    row["Name"].ToString())).ToList();
-            }
-        }
-        public static string GetPassengerLocation(string passengerName)
-        {
-            using (var conn = Conn)
-            using (var cmd = new MySqlCommand(SqlStrings.Passenger_GetByName, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
-                cmd.Parameters.AddWithValue("@passengerName", passengerName);
-
-                da.Fill(data);
-
-                if (data.Rows.Count != 1)
-                    throw new DataException($"Unable to find one passenger with that name; found {data.Rows.Count}.");
-
-                return data.Rows[0]["Location"].ToString();
-            }
-        }
-
-        public static bool UpdatePassengerLocation(string name, PassengerLocation location)
-        {
-            using (var conn = Conn)
-            using (var cmd = new MySqlCommand(SqlStrings.Passenger_UpdateLocation, conn))
-            {
-                cmd.Parameters.AddWithValue("@passengerName", name);
-                cmd.Parameters.AddWithValue("@location", location.ToString());
-
-                return cmd.ExecuteNonQuery() > 0;
+                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["SeaportID"].ToString(), (int)row["NoOfCoaches"])).ToList();
             }
         }
 
