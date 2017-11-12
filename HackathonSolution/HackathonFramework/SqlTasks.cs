@@ -24,6 +24,20 @@ namespace HackathonFramework
             }
         }
 
+        public static List<Passenger> GetAllPassengers()
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Passenger_ListAll, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                da.Fill(data);
+                return data.AsEnumerable().Select(row => new Passenger(
+                    row["PassengerID"].ToString(),
+                    row["CabinID"].ToString(),
+                    row["Name"].ToString())).ToList();
+            }
+        }
         public static string GetPassengerLocation(string passengerName)
         {
             using (var conn = Conn)

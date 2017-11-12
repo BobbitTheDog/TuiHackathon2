@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HackathonFramework
 {
-    class Passenger
+    public class Passenger
     {
         private readonly string _passengerID;
         public string PassengerID => _passengerID;

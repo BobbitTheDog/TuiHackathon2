@@ -91,6 +91,16 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM Passenger
+        ///ORDER BY Name;.
+        /// </summary>
+        internal static string Passenger_ListAll {
+            get {
+                return ResourceManager.GetString("Passenger_ListAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UPDATE Passenger
         ///SET Location = @location
         ///WHERE Name = @passengerName;.
