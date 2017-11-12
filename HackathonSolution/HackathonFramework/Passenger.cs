@@ -20,9 +20,10 @@ namespace HackathonFramework
         private readonly string _name;
         public string Name => _name;
 
-        public Passenger(string passengerID, string cabinID, string name)
+        public Passenger(string passengerID, string shipID, string cabinID, string name)
         {
             _passengerID = passengerID;
+            _shipID = shipID;
             _cabinID = cabinID;
             _name = name;
         }

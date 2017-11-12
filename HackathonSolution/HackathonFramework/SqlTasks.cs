@@ -126,7 +126,7 @@ namespace HackathonFramework
             using (var da = new MySqlDataAdapter(cmd))
             using (var data = new DataTable())
             {
-               da.Fill(data);
+                da.Fill(data);
 
                 return data.AsEnumerable().Select(row => new Booking(
                     row["ExcursionID"].ToString(),
@@ -166,6 +166,7 @@ namespace HackathonFramework
                 da.Fill(data);
                 return data.AsEnumerable().Select(row => new Passenger(
                     row["PassengerID"].ToString(),
+                    row["ShipID"].ToString(),
                     row["CabinID"].ToString(),
                     row["Name"].ToString())).ToList();
             }
@@ -195,6 +196,8 @@ namespace HackathonFramework
             using (var conn = Conn)
             using (var cmd = new MySqlCommand(SqlStrings.Passenger_UpdateLocation, conn))
             {
+                conn.Open();
+
                 cmd.Parameters.AddWithValue("@passengerName", name);
                 cmd.Parameters.AddWithValue("@location", location.ToString());
 

@@ -53,6 +53,7 @@
     <Compile Include="BookingStatus.cs" />
     <Compile Include="Excursion.cs" />
     <Compile Include="Itinerary.cs" />
+    <Compile Include="LocationData.cs" />
     <Compile Include="Passenger.cs" />
     <Compile Include="PassengerLocation.cs" />
     <Compile Include="Port.cs" />
