@@ -15,9 +15,10 @@ namespace HackathonAPI.Controllers
             return SqlTasks.GetBookings(cabinID);
         }
 
-        public Booking PostBooking(string CabinID)
+        public IHttpActionResult PostBooking(string cabinID, string excursionID, int numPass)
         {
-            throw new NotImplementedException();
+            return Ok(SqlTasks.InsertBooking(cabinID, excursionID, BookingStatus.Cancelable, numPass));
         }
+        
     }
 }

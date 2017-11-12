@@ -90,7 +90,8 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to SELECT * FROM Booking
+        ///ORDER BY ExcursionID;.
         /// </summary>
         internal static string Bookings_ListAll {
             get {
@@ -99,7 +100,18 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to SELECT CruiseID FROM Cabin
+        ///Where CabinID = @cabinID;.
+        /// </summary>
+        internal static string Cruise_GetByCabinID_ {
+            get {
+                return ResourceManager.GetString("Cruise_GetByCabinID_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * From Excursions
+        ///ORDER BY ExcursionID;.
         /// </summary>
         internal static string Excursion_ListAll {
             get {
@@ -201,7 +213,8 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT PortOfCall.* FROM PortOfCall
+        ///   Looks up a localized string similar to SELECT PortOfCall.*, Name FROM PortOfCall
+        ///INNER JOIN Port ON PortOfCall.PortID = Port.PortID
         ///WHERE ItineraryID = @itineraryID
         ///ORDER BY StopOrder ASC;.
         /// </summary>

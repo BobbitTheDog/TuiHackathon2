@@ -191,6 +191,22 @@ namespace HackathonFramework
             }
         }
 
+        public static string GetCruise(string cabinID)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Cruise_GetByCabinID, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                cmd.Parameters.AddWithValue("@cabinID", cabinID);
+
+                da.Fill(data);
+
+                return data.ToString();
+            }
+
+        }
+
         public static bool UpdatePassengerLocation(string name, PassengerLocation location)
         {
             using (var conn = Conn)

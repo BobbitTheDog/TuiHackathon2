@@ -1,5 +1,5 @@
+var shipID = "150012";
 var cabID;
-var cruiseID;
 var lat = [];
 var lon = [];
 var images = [];
@@ -13,9 +13,8 @@ $(document).ready(function() {
     $(window).on('hashchange', function() {
         if (location.hash.slice(1) === "book"||location.hash.slice(1) === "manage") {
             cabID = $("#cabinID").val();
-			getCruise(cabID);
 			getExcursions(cabID);
-			getPorts();
+			getPorts(cabID);
         }
 		else{
 			$("#excursionID").val("");
@@ -85,23 +84,11 @@ function cabinID_oninput() {
     }
 }
 
-function getCruise(cabinID){
-	$.ajax({
-		type: "GET",
-        url: "http://localhost:56709/API/excursions?id=" + cabinID,
-        dataType: "json",
-        cache: false,
-        success: function(result) {
-            cruiseID = result.cruiseID
-        }
-	});
-}
-
 function getExcursions(cabinID) {
     console.log("GETTING FOR: " + cabinID);
     $.ajax({
         type: "GET",
-        url: "http://localhost:56709/API/excursions?id=" + cabinID,
+        url: "http://localhost:56709/API/excursions/" + cabinID +"&" + shipID,
         dataType: "json",
         cache: false,
         success: function(result) {
@@ -112,22 +99,14 @@ function getExcursions(cabinID) {
                 }));
             });
         }
-		/*
-		* {
-			cruiseID: "",
-			bookings: [{excursion objects}]
-			availableExcursions: [{excursion objects}]
 		
-		* }
-		*
-		*/
     });
 }
 
-function getPorts(){
+function getPorts(cabinID){
 	$.ajax({
 		type: "GET",
-        url: "http://localhost:56709/API/ports?id=" + cruiseID,
+        url: "http://localhost:56709/API/ports/" + cabinID + "&" + shipID,
         dataType: "json",
         cache: false,
         success: function(result) {
@@ -146,7 +125,7 @@ function formSubmitHandler(event) {
     var numPass = $("#nopass").val();
 
     // Returns successful data submission message when the entered information is stored in database.
-    var dataString = 'cabinID=' + cabinID + '&excursionID=' + excursionID + '&numPass=' + numPass;
+    
     if (cabinID === '' || excursionID === '' || numPass === '')
     {
         alert("Please Fill All Fields");
@@ -156,8 +135,13 @@ function formSubmitHandler(event) {
         // AJAX Code To Submit Form.
         $.ajax({
             type: "POST",
-            url: "http://localhost:56709/API/book",
-            data: dataString,
+            url: "http://localhost:56709/API/bookings",
+            data: {
+				"cabinID": cabinID,
+				"excursionID": excursionID,
+				"numPass":numPass
+			},
+			datatype: "json",
             cache: false,
             success: function(result) {
                 alert(result);
@@ -174,7 +158,7 @@ function updateSubmitHandler(event){
     var numPass = $("#nopass").val();
 	
 	// Returns successful data submission message when the entered information is stored in database.
-    var dataString = 'cabinID=' + cabinID + '&excursionID=' + excursionID + '&numPass=' + numPass;
+    
     if (cabinID === '' || excursionID === '' || numPass === '')
     {
         alert("Please Fill All Fields");
@@ -184,8 +168,13 @@ function updateSubmitHandler(event){
         // AJAX Code To Submit Form.
         $.ajax({
             type: "POST",
-            url: "http://localhost:56709/API/book",
-            data: dataString,
+            url: "http://localhost:56709/API/updatebookings",
+            data: {
+				"cabinID": cabinID,
+				"excursionID": excursionID,
+				"numPass":numPass
+			},
+			datatype: "json",
             cache: false,
             success: function(result) {
                 alert(result);
@@ -200,7 +189,7 @@ function cancelSubmitHandler(event){
 	
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:56709/API/cancel",
+		url: "http://localhost:56709/API/cancelbookings",
 		data: "excursionID="+excursionID,
 		success: function(result) {
                 alert(result);
