@@ -10,6 +10,16 @@ namespace HackathonAPI.Controllers
 {
     public class PassengersController : ApiController
     {
+        public List<Passenger> GetAllPassengers()
+        {
+            return SqlTasks.GetAllPassengers();
+        }
+        
+        public string GetPassengerLocation(string passengerName)
+        {
+            return SqlTasks.GetPassengerLocation(passengerName);
+        }
+
         public IHttpActionResult PostPassengerLocation(string passengerName, [FromBody] string location)
         {
             PassengerLocation _location;
@@ -19,11 +29,6 @@ namespace HackathonAPI.Controllers
 
             var success = SqlTasks.UpdatePassengerLocation(passengerName, _location);
             return Ok(success);
-        }
-
-        public string GetPassengerLocation(string passengerName)
-        {
-            return SqlTasks.GetPassengerLocation(passengerName);
         }
     }
 }

@@ -14,5 +14,10 @@ namespace HackathonAPI.Controllers
         {
             return SqlTasks.GetBookings(cabinID);
         }
+
+        public Booking PostBooking(string CabinID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
