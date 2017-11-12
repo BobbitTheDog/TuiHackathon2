@@ -15,9 +15,9 @@ namespace HackathonAPI.Controllers
             return SqlTasks.GetAllPorts().AsEnumerable();
         }
 
-        public IEnumerable<Port> GetPorts(string shipID)
+        public IEnumerable<Port> GetPorts(string cruiseID)
         {
-            return SqlTasks.GetDestinationPorts(shipID);
+            return SqlTasks.GetDestinationPorts(cruiseID);
         }
     }
 }
