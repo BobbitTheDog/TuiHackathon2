@@ -95,6 +95,7 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Resource Include="sql\Bookings_ListAll.sql" />
     <Resource Include="sql\Excursion_ListAll.sql" />
     <Resource Include="sql\Booking_Insert.sql" />
     <Resource Include="sql\Passenger_ListAll.sql" />
