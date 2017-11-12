@@ -47,7 +47,7 @@ namespace AdminGui
         }
         private void LoadExcBook(string bookingID)
         {
-            var excursion = SqlTasks.GetBookingExcursion(bookingID);
+            //var excursion = SqlTasks.GetBookingExcursion(bookingID);
             
 
         }
