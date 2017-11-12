@@ -135,5 +135,69 @@ namespace HackathonFramework
                 ));
             }
         }
+
+        public static bool InsertBooking(string cabinID, string excursionID, BookingStatus status, int numPassengers)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Booking_Insert))
+            {
+                cmd.Parameters.AddWithValue("@cabinID", cabinID);
+                cmd.Parameters.AddWithValue("@excursionID", excursionID);
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@numPassengers", numPassengers);
+
+                return (cmd.ExecuteNonQuery() == 1);
+            }
+        }
+
+        public static Booking UpdateBooking(int bookingID, string cabinID, string excursionID, BookingStatus status, int numPassengers)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static List<Passenger> GetAllPassengers()
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Passenger_ListAll, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                da.Fill(data);
+                return data.AsEnumerable().Select(row => new Passenger(
+                    row["PassengerID"].ToString(),
+                    row["CabinID"].ToString(),
+                    row["Name"].ToString())).ToList();
+            }
+        }
+
+        public static string GetPassengerLocation(string passengerName)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Passenger_GetByName, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                cmd.Parameters.AddWithValue("@passengerName", passengerName);
+
+                da.Fill(data);
+
+                if (data.Rows.Count != 1)
+                    throw new DataException($"Unable to find one passenger with that name; found {data.Rows.Count}.");
+
+                return data.Rows[0]["Location"].ToString();
+            }
+        }
+
+        public static bool UpdatePassengerLocation(string name, PassengerLocation location)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Passenger_UpdateLocation, conn))
+            {
+                cmd.Parameters.AddWithValue("@passengerName", name);
+                cmd.Parameters.AddWithValue("@location", location.ToString());
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
     }
 }

@@ -32,8 +32,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage
   ],
   providers: [
+    NFC,
     StatusBar,
-    SplashScreen,
+    SplashScreen
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
