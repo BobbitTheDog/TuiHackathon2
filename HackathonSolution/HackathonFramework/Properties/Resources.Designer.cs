@@ -81,6 +81,27 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM Passenger
+        ///WHERE Name = @passengerName;.
+        /// </summary>
+        internal static string Passenger_GetByName {
+            get {
+                return ResourceManager.GetString("Passenger_GetByName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPDATE Passenger
+        ///SET Location = @location
+        ///WHERE Name = @passengerName;.
+        /// </summary>
+        internal static string Passenger_UpdateLocation {
+            get {
+                return ResourceManager.GetString("Passenger_UpdateLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT port1.portID
         ///	,port2.portID
         ///	,st_distance_sphere(port1.location, port2.location) distance

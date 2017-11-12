@@ -24,6 +24,36 @@ namespace HackathonFramework
             }
         }
 
+        public static string GetPassengerLocation(string passengerName)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Passenger_GetByName, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                cmd.Parameters.AddWithValue("@passengerName", passengerName);
+
+                da.Fill(data);
+
+                if (data.Rows.Count != 1)
+                    throw new DataException($"Unable to find one passenger with that name; found {data.Rows.Count}.");
+
+                return data.Rows[0]["Location"].ToString();
+            }
+        }
+
+        public static bool UpdatePassengerLocation(string name, PassengerLocation location)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Passenger_UpdateLocation, conn))
+            {
+                cmd.Parameters.AddWithValue("@passengerName", name);
+                cmd.Parameters.AddWithValue("@location", location.ToString());
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
         public static List<Ship> GetAllShips(bool loadItinerary = true)
         {
             using (var conn = Conn)

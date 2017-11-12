@@ -53,6 +53,7 @@
     <Compile Include="BookingStatus.cs" />
     <Compile Include="Itinerary.cs" />
     <Compile Include="Passenger.cs" />
+    <Compile Include="PassengerLocation.cs" />
     <Compile Include="Port.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="SqlStrings.cs" />
@@ -93,6 +94,8 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Resource Include="sql\Passenger_GetByName.sql" />
+    <Resource Include="sql\Passenger_UpdateLocation.sql" />
     <Resource Include="sql\Bookings_GetByCabinID.sql" />
     <Resource Include="sql\Itinerary_ListAll.sql" />
   </ItemGroup>

@@ -10,7 +10,7 @@ namespace HackathonAPI.Controllers
 {
     public class BookingsController : ApiController
     {
-        public List<Booking> GetCabinBookings(string cabinID)
+        public IEnumerable<Booking> GetCabinBookings(string cabinID)
         {
             return SqlTasks.GetBookings(cabinID);
         }

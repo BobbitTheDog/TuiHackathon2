@@ -124,6 +124,12 @@
   <data name="Itinerary_ListAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sql\itinerary_listall.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Passenger_GetByName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sql\passenger_getbyname.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Passenger_UpdateLocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sql\passenger_updatelocation.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="PortOfCall_ClearByShipID" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sql\portofcall_clearbyshipid.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
