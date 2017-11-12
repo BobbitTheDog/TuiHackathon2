@@ -163,4 +163,7 @@
   <data name="PortOfCall_ListByItineraryID" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sql\portofcall_listbyitineraryid.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Cruise_GetByCabinID_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sql\cruise_getbycabinid..sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
