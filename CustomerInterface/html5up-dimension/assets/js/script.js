@@ -1,4 +1,4 @@
-var shipID = "150012";
+var cruiseID = "150012";
 var cabID;
 var lat = [];
 var lon = [];
@@ -88,7 +88,7 @@ function getExcursions(cabinID) {
     console.log("GETTING FOR: " + cabinID);
     $.ajax({
         type: "GET",
-        url: "http://localhost:56709/API/excursions/" + cabinID +"&" + shipID,
+        url: "http://localhost:56709/API/excursions/" + cruiseID,
         dataType: "json",
         cache: false,
         success: function(result) {
@@ -106,7 +106,7 @@ function getExcursions(cabinID) {
 function getPorts(cabinID){
 	$.ajax({
 		type: "GET",
-        url: "http://localhost:56709/API/ports/" + cabinID + "&" + shipID,
+        url: "http://localhost:56709/API/ports/" + cruiseID,
         dataType: "json",
         cache: false,
         success: function(result) {
