@@ -22,5 +22,6 @@ namespace HackathonFramework
         public static string Passenger_UpdateLocation => Resources.Passenger_UpdateLocation;
         public static string Passenger_GetByName => Resources.Passenger_GetByName;
         public static string Passenger_ListAll => Resources.Passenger_ListAll;
+        public static string Excursion_ListAll => Resources.Excursion_ListAll;
     }
 }

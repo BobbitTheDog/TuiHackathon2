@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Booking.cs" />
     <Compile Include="BookingStatus.cs" />
+    <Compile Include="Excursion.cs" />
     <Compile Include="Itinerary.cs" />
     <Compile Include="Passenger.cs" />
     <Compile Include="PassengerLocation.cs" />
@@ -94,6 +95,7 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Resource Include="sql\Excursion_ListAll.sql" />
     <Resource Include="sql\Booking_Insert.sql" />
     <Resource Include="sql\Passenger_ListAll.sql" />
     <Resource Include="sql\Passenger_GetByName.sql" />

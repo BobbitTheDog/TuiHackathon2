@@ -86,6 +86,15 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Excursion_ListAll {
+            get {
+                return ResourceManager.GetString("Excursion_ListAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT Itinerary, Name FROM Itinerary
         ///ORDER BY ItineraryID ASC;.
         /// </summary>
