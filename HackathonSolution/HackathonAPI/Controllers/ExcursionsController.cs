@@ -10,9 +10,14 @@ namespace HackathonAPI.Controllers
 {
     public class ExcursionsController : ApiController
     {
-        public stringcabin GetCruise(string cabinID)
+        public IEnumerable<Excursion> GetExcursions()
         {
-            return SqlTasks.GetCruise(cabinID);
+            return SqlTasks.GetAllExcursions();
+        }
+
+        public IEnumerable<Excursion> GetExcursionsForCruise([FromUri] string cruiseID)
+        {
+            return SqlTasks.GetExcursionsForCruise(cruiseID);
         }
     }
 }

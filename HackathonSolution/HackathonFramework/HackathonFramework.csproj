@@ -98,6 +98,7 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
     <Content Include="sql\Cruise_GetByCabinID..sql" />
+    <Resource Include="sql\Excursion_ListByCruiseID.sql" />
     <Resource Include="sql\Bookings_ListAll.sql" />
     <Resource Include="sql\Excursion_ListAll.sql" />
     <Resource Include="sql\Booking_Insert.sql" />

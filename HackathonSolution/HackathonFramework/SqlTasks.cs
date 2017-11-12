@@ -24,6 +24,19 @@ namespace HackathonFramework
             }
         }
 
+        public static IEnumerable<Excursion> GetExcursionsForCruise(string cruiseID)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Excursion_ListByCruiseID, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+                cmd.Parameters.AddWithValue("@cruiseID", cruiseID);
+                da.Fill(data);
+                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["PortID"].ToString(), (int)row["NumCoaches"])).ToList();
+            }
+        }
+
         internal static List<PortOfCall> GetPortsOfCall(string itineraryID)
         {
             using (var conn = Conn)
@@ -51,7 +64,7 @@ namespace HackathonFramework
             }
         }
 
-        public static List<Excursion> GetAllExcursions()
+        public static IEnumerable<Excursion> GetAllExcursions()
         {
             using (var conn = Conn)
             using (var cmd = new MySqlCommand(SqlStrings.Excursion_ListAll, conn))
@@ -166,7 +179,7 @@ namespace HackathonFramework
                 da.Fill(data);
                 return data.AsEnumerable().Select(row => new Passenger(
                     row["PassengerID"].ToString(),
-                    row["ShipID"].ToString(),
+                    (int)row["CruiseID"],
                     row["CabinID"].ToString(),
                     row["Name"].ToString())).ToList();
             }
@@ -189,22 +202,6 @@ namespace HackathonFramework
 
                 return data.Rows[0]["Location"].ToString();
             }
-        }
-
-        public static string GetCruise(string cabinID)
-        {
-            using (var conn = Conn)
-            using (var cmd = new MySqlCommand(SqlStrings.Cruise_GetByCabinID, conn))
-            using (var da = new MySqlDataAdapter(cmd))
-            using (var data = new DataTable())
-            {
-                cmd.Parameters.AddWithValue("@cabinID", cabinID);
-
-                da.Fill(data);
-
-                return data.ToString();
-            }
-
         }
 
         public static bool UpdatePassengerLocation(string name, PassengerLocation location)

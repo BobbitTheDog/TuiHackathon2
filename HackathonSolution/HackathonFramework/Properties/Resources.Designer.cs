@@ -120,6 +120,17 @@ namespace HackathonFramework.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT Excursion.* FROM Cruise
+        ///INNER JOIN PortOfCall ON PortOfCall.ItineraryID = Cruise.ItineraryID 
+        ///INNER JOIN Excursion ON Excursion.PortID = PortOfCall.PortID;.
+        /// </summary>
+        internal static string Excursion_ListByCruiseID {
+            get {
+                return ResourceManager.GetString("Excursion_ListByCruiseID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT * FROM Itinerary
         ///ORDER BY ItineraryID ASC;.
         /// </summary>

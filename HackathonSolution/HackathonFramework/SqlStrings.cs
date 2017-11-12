@@ -24,5 +24,6 @@ namespace HackathonFramework
         public static string Passenger_ListAll => Resources.Passenger_ListAll;
         public static string Excursion_ListAll => Resources.Excursion_ListAll;
         public static string Bookings_ListAll => Resources.Bookings_ListAll;
+        public static string Excursion_ListByCruiseID => Resources.Excursion_ListByCruiseID;
     }
 }
