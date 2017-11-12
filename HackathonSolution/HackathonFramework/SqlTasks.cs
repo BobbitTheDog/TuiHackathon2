@@ -119,6 +119,24 @@ namespace HackathonFramework
             }
         }
 
+        public static IEnumerable<Booking> GetAllBookings()
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Bookings_ListAll, conn))
+            using (var da = new MySqlDataAdapter(cmd))
+            using (var data = new DataTable())
+            {
+               da.Fill(data);
+
+                return data.AsEnumerable().Select(row => new Booking(
+                    row["ExcursionID"].ToString(),
+                    row["cabinID"].ToString(),
+                    (int)row["numPassengers"],
+                    (BookingStatus)Enum.Parse(typeof(BookingStatus), row["status"].ToString())
+                ));
+            }
+        }
+
         public static bool InsertBooking(string cabinID, string excursionID, BookingStatus status, int numPassengers)
         {
             using (var conn = Conn)
@@ -152,6 +170,7 @@ namespace HackathonFramework
                     row["Name"].ToString())).ToList();
             }
         }
+
 
         public static string GetPassengerLocation(string passengerName)
         {

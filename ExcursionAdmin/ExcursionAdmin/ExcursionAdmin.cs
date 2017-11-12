@@ -15,7 +15,6 @@ namespace AdminGui
 {
     public partial class formExAdmin : Form
     {
-        
 
         public formExAdmin()
         {
@@ -28,9 +27,11 @@ namespace AdminGui
         private void LoadExcursions()
         {
             var excursions = SqlTasks.GetAllExcursions();
+
         }
         private void LoadBookings()
         {
+            var bookings = SqlTasks.GetAllBookings();
 
         }
 

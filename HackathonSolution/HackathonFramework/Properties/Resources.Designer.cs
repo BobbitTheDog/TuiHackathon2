@@ -92,6 +92,15 @@ namespace HackathonFramework.Properties {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        internal static string Bookings_ListAll {
+            get {
+                return ResourceManager.GetString("Bookings_ListAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         internal static string Excursion_ListAll {
             get {
                 return ResourceManager.GetString("Excursion_ListAll", resourceCulture);

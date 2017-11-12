@@ -157,6 +157,9 @@
   <data name="Ship_ListNameAndID" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sql\ship_listnameandid.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="Bookings_ListAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sql\bookings_listall.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="PortOfCall_ListByItineraryID" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sql\portofcall_listbyitineraryid.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
