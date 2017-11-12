@@ -18,6 +18,8 @@ namespace PassengerLocationMonitor
     {
         Pubnub pubnub;
 
+        Dictionary<PassengerLocation, ListBox> listBoxes;
+
         public passengerLocationForm()
         {
             PNConfiguration config = new PNConfiguration();
@@ -30,11 +32,19 @@ namespace PassengerLocationMonitor
             pubnub.Subscribe<string>()
                 .Channels(new string[]
                 {
-                    "team999"
+                    "teams[0]"
                 })
                 .Execute();
 
             InitializeComponent();
+
+            listBoxes = new Dictionary<PassengerLocation, ListBox>
+            {
+                { PassengerLocation.Onboard, lstOnBoard },
+                { PassengerLocation.OnCoach, lstOnCoach},
+                { PassengerLocation.OnExcursion, lstOnExcursion},
+                { PassengerLocation.Disembarked, lstDisembarked}
+            };
         }
 
         private void HandlePubnub(Pubnub pubnubObj, PNMessageResult<object> message)
@@ -48,9 +58,15 @@ namespace PassengerLocationMonitor
                     // message.Channel()
                     LocationData messageData = JsonConvert.DeserializeObject<LocationData>(message.Message.ToString());
 
-                    SqlTasks.UpdatePassengerLocation(messageData.Tag, (PassengerLocation)Enum.Parse(typeof(PassengerLocation), messageData.Sensor));
+                    PassengerLocation location;
+                    if (!Enum.TryParse<PassengerLocation>(messageData.Sensor, out location))
+                    {
 
-                    MovePassenger(messageData.Tag, messageData.Sensor);
+                    }
+
+                    SqlTasks.UpdatePassengerLocation(messageData.Tag, location);
+
+                    this.Invoke((MethodInvoker)(() => MovePassenger(messageData.Tag, location)));
                 }
                 else
                 {
@@ -67,9 +83,15 @@ namespace PassengerLocationMonitor
             }
         }
 
-        private void MovePassenger(string tag, string sensor)
+        private void MovePassenger(string name, PassengerLocation location)
         {
-            
+            listBoxes
+                .Select(dict => dict.Value).ToList()
+                .ForEach(lst =>
+                    lst.Items.Remove(name)
+                );
+
+            listBoxes[location].Items.Add(name);
         }
     }
 }

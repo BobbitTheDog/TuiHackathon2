@@ -1,4 +1,4 @@
-﻿namespace PassengerLocationWinForm
+﻿namespace PassengerLocationMonitor
 {
     partial class passengerLocationForm
     {
@@ -28,61 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.onBoardListBox = new System.Windows.Forms.ListBox();
-            this.onCoachListBox = new System.Windows.Forms.ListBox();
-            this.onExcursionListBox = new System.Windows.Forms.ListBox();
-            this.disembarkedListBox = new System.Windows.Forms.ListBox();
+            this.lstOnBoard = new System.Windows.Forms.ListBox();
+            this.lstOnCoach = new System.Windows.Forms.ListBox();
+            this.lstOnExcursion = new System.Windows.Forms.ListBox();
+            this.lstDisembarked = new System.Windows.Forms.ListBox();
             this.onBoardLbl = new System.Windows.Forms.Label();
             this.onCoachLbl = new System.Windows.Forms.Label();
             this.onExcursionLbl = new System.Windows.Forms.Label();
             this.disembarkedLbl = new System.Windows.Forms.Label();
-            this.refreshTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // onBoardListBox
+            // lstOnBoard
             // 
-            this.onBoardListBox.FormattingEnabled = true;
-            this.onBoardListBox.ItemHeight = 16;
-            this.onBoardListBox.Location = new System.Drawing.Point(12, 27);
-            this.onBoardListBox.Name = "onBoardListBox";
-            this.onBoardListBox.Size = new System.Drawing.Size(183, 468);
-            this.onBoardListBox.TabIndex = 0;
+            this.lstOnBoard.FormattingEnabled = true;
+            this.lstOnBoard.Location = new System.Drawing.Point(9, 22);
+            this.lstOnBoard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstOnBoard.Name = "lstOnBoard";
+            this.lstOnBoard.Size = new System.Drawing.Size(138, 381);
+            this.lstOnBoard.TabIndex = 0;
             // 
-            // onCoachListBox
+            // lstOnCoach
             // 
-            this.onCoachListBox.FormattingEnabled = true;
-            this.onCoachListBox.ItemHeight = 16;
-            this.onCoachListBox.Location = new System.Drawing.Point(226, 27);
-            this.onCoachListBox.Name = "onCoachListBox";
-            this.onCoachListBox.Size = new System.Drawing.Size(185, 468);
-            this.onCoachListBox.TabIndex = 1;
+            this.lstOnCoach.FormattingEnabled = true;
+            this.lstOnCoach.Location = new System.Drawing.Point(170, 22);
+            this.lstOnCoach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstOnCoach.Name = "lstOnCoach";
+            this.lstOnCoach.Size = new System.Drawing.Size(140, 381);
+            this.lstOnCoach.TabIndex = 1;
             // 
-            // onExcursionListBox
+            // lstOnExcursion
             // 
-            this.onExcursionListBox.FormattingEnabled = true;
-            this.onExcursionListBox.ItemHeight = 16;
-            this.onExcursionListBox.Location = new System.Drawing.Point(450, 27);
-            this.onExcursionListBox.Name = "onExcursionListBox";
-            this.onExcursionListBox.Size = new System.Drawing.Size(183, 468);
-            this.onExcursionListBox.TabIndex = 2;
+            this.lstOnExcursion.FormattingEnabled = true;
+            this.lstOnExcursion.Location = new System.Drawing.Point(338, 22);
+            this.lstOnExcursion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstOnExcursion.Name = "lstOnExcursion";
+            this.lstOnExcursion.Size = new System.Drawing.Size(138, 381);
+            this.lstOnExcursion.TabIndex = 2;
             // 
-            // disembarkedListBox
+            // lstDisembarked
             // 
-            this.disembarkedListBox.FormattingEnabled = true;
-            this.disembarkedListBox.ItemHeight = 16;
-            this.disembarkedListBox.Location = new System.Drawing.Point(667, 27);
-            this.disembarkedListBox.Name = "disembarkedListBox";
-            this.disembarkedListBox.Size = new System.Drawing.Size(183, 468);
-            this.disembarkedListBox.TabIndex = 3;
+            this.lstDisembarked.FormattingEnabled = true;
+            this.lstDisembarked.Location = new System.Drawing.Point(500, 22);
+            this.lstDisembarked.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstDisembarked.Name = "lstDisembarked";
+            this.lstDisembarked.Size = new System.Drawing.Size(138, 381);
+            this.lstDisembarked.TabIndex = 3;
             // 
             // onBoardLbl
             // 
             this.onBoardLbl.AutoSize = true;
             this.onBoardLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.onBoardLbl.Location = new System.Drawing.Point(61, 7);
+            this.onBoardLbl.Location = new System.Drawing.Point(46, 6);
+            this.onBoardLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.onBoardLbl.Name = "onBoardLbl";
-            this.onBoardLbl.Size = new System.Drawing.Size(71, 19);
+            this.onBoardLbl.Size = new System.Drawing.Size(54, 15);
             this.onBoardLbl.TabIndex = 4;
             this.onBoardLbl.Text = "On Board";
             // 
@@ -90,9 +89,10 @@
             // 
             this.onCoachLbl.AutoSize = true;
             this.onCoachLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.onCoachLbl.Location = new System.Drawing.Point(278, 7);
+            this.onCoachLbl.Location = new System.Drawing.Point(208, 6);
+            this.onCoachLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.onCoachLbl.Name = "onCoachLbl";
-            this.onCoachLbl.Size = new System.Drawing.Size(73, 19);
+            this.onCoachLbl.Size = new System.Drawing.Size(57, 15);
             this.onCoachLbl.TabIndex = 5;
             this.onCoachLbl.Text = "On Coach";
             // 
@@ -100,9 +100,10 @@
             // 
             this.onExcursionLbl.AutoSize = true;
             this.onExcursionLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.onExcursionLbl.Location = new System.Drawing.Point(492, 7);
+            this.onExcursionLbl.Location = new System.Drawing.Point(369, 6);
+            this.onExcursionLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.onExcursionLbl.Name = "onExcursionLbl";
-            this.onExcursionLbl.Size = new System.Drawing.Size(94, 19);
+            this.onExcursionLbl.Size = new System.Drawing.Size(72, 15);
             this.onExcursionLbl.TabIndex = 6;
             this.onExcursionLbl.Text = "On Excursion";
             // 
@@ -110,30 +111,27 @@
             // 
             this.disembarkedLbl.AutoSize = true;
             this.disembarkedLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.disembarkedLbl.Location = new System.Drawing.Point(712, 7);
+            this.disembarkedLbl.Location = new System.Drawing.Point(534, 6);
+            this.disembarkedLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.disembarkedLbl.Name = "disembarkedLbl";
-            this.disembarkedLbl.Size = new System.Drawing.Size(93, 19);
+            this.disembarkedLbl.Size = new System.Drawing.Size(71, 15);
             this.disembarkedLbl.TabIndex = 7;
             this.disembarkedLbl.Text = "Disembarked";
             // 
-            // refreshTimer
-            // 
-            this.refreshTimer.Enabled = true;
-            this.refreshTimer.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // passengerLocationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 507);
+            this.ClientSize = new System.Drawing.Size(653, 412);
             this.Controls.Add(this.disembarkedLbl);
             this.Controls.Add(this.onExcursionLbl);
             this.Controls.Add(this.onCoachLbl);
             this.Controls.Add(this.onBoardLbl);
-            this.Controls.Add(this.disembarkedListBox);
-            this.Controls.Add(this.onExcursionListBox);
-            this.Controls.Add(this.onCoachListBox);
-            this.Controls.Add(this.onBoardListBox);
+            this.Controls.Add(this.lstDisembarked);
+            this.Controls.Add(this.lstOnExcursion);
+            this.Controls.Add(this.lstOnCoach);
+            this.Controls.Add(this.lstOnBoard);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "passengerLocationForm";
             this.Text = "Passenger Location";
             this.ResumeLayout(false);
@@ -143,15 +141,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox onBoardListBox;
-        private System.Windows.Forms.ListBox onCoachListBox;
-        private System.Windows.Forms.ListBox onExcursionListBox;
-        private System.Windows.Forms.ListBox disembarkedListBox;
+        private System.Windows.Forms.ListBox lstOnBoard;
+        private System.Windows.Forms.ListBox lstOnCoach;
+        private System.Windows.Forms.ListBox lstOnExcursion;
+        private System.Windows.Forms.ListBox lstDisembarked;
         private System.Windows.Forms.Label onBoardLbl;
         private System.Windows.Forms.Label onCoachLbl;
         private System.Windows.Forms.Label onExcursionLbl;
         private System.Windows.Forms.Label disembarkedLbl;
-        private System.Windows.Forms.Timer refreshTimer;
     }
 }
 

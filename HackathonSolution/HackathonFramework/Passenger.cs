@@ -14,16 +14,16 @@ namespace HackathonFramework
         private readonly string _cabinID;
         public string CabinID => _cabinID;
 
-        private readonly string _shipID;
-        public string ShipID => _shipID;
+        private readonly int _cruiseID;
+        public int CruiseID => _cruiseID;
 
         private readonly string _name;
         public string Name => _name;
 
-        public Passenger(string passengerID, string shipID, string cabinID, string name)
+        public Passenger(string passengerID, int cruiseID, string cabinID, string name)
         {
             _passengerID = passengerID;
-            _shipID = shipID;
+            _cruiseID = cruiseID;
             _cabinID = cabinID;
             _name = name;
         }

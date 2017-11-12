@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItineraryAdmin", "ItineraryAdmin\ItineraryAdmin.csproj", "{AD6744AA-F609-41CD-BDF4-4A6A5D1E138E}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonFramework", "Hacka
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonAPI", "HackathonAPI\HackathonAPI.csproj", "{C925D8E3-49EA-4C22-BC04-1E85E4DE2D19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassengerLocationWinForm", "PassengerLocationWinForm\PassengerLocationWinForm.csproj", "{A8DD6F1C-F466-4BC6-AB8A-A79464770423}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassengerLocationMonitor", "PassengerLocationWinForm\PassengerLocationMonitor.csproj", "{A8DD6F1C-F466-4BC6-AB8A-A79464770423}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcursionAdmin", "..\ExcursionAdmin\ExcursionAdmin\ExcursionAdmin.csproj", "{7611B182-2FCE-4021-8E31-376083C748E5}"
 EndProject

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PassengerLocationWinForm.Properties
+namespace PassengerLocationMonitor.Properties
 {
 
 
