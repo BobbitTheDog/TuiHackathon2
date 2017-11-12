@@ -1,2 +1,2 @@
-﻿SELECT * From Excursions
+﻿SELECT * From Excursion
 ORDER BY ExcursionID;

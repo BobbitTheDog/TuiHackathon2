@@ -1,4 +1,4 @@
-var cruiseID = "150012";
+var cruiseID = "1";
 var cabID;
 var lat = [];
 var lon = [];
@@ -85,17 +85,16 @@ function cabinID_oninput() {
 }
 
 function getExcursions(cabinID) {
-    console.log("GETTING FOR: " + cabinID);
     $.ajax({
         type: "GET",
-        url: "http://localhost:56709/API/excursions/" + cruiseID,
+        url: "http://localhost:56709/API/excursions/?cruiseID=" + cruiseID,
         dataType: "json",
         cache: false,
         success: function(result) {
-            $.each(result.availableExcursions, function(index, excursion) {
+            $.each(result, function(index, excursion) {
                 $("#excursionID"&"exmanageID").append($('<option>', {
                     value: index,
-                    text: excursion
+                    text: excursion["Name"]
                 }));
             });
         }
