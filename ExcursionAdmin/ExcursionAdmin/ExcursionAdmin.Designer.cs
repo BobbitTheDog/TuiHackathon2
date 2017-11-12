@@ -34,11 +34,9 @@
             this.btnSubmitEx = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbCoachNoEx = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtCoachNoEx = new System.Windows.Forms.TextBox();
             this.cmbSelectEx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbNameEx = new System.Windows.Forms.TextBox();
             this.gbBook = new System.Windows.Forms.GroupBox();
             this.btnSubmitBook = new System.Windows.Forms.Button();
             this.txtPassNumBook = new System.Windows.Forms.TextBox();
@@ -62,11 +60,9 @@
             this.gbExc.Controls.Add(this.btnSubmitEx);
             this.gbExc.Controls.Add(this.label7);
             this.gbExc.Controls.Add(this.label6);
-            this.gbExc.Controls.Add(this.tbCoachNoEx);
-            this.gbExc.Controls.Add(this.label2);
+            this.gbExc.Controls.Add(this.txtCoachNoEx);
             this.gbExc.Controls.Add(this.cmbSelectEx);
             this.gbExc.Controls.Add(this.label1);
-            this.gbExc.Controls.Add(this.tbNameEx);
             this.gbExc.Location = new System.Drawing.Point(12, 10);
             this.gbExc.Name = "gbExc";
             this.gbExc.Size = new System.Drawing.Size(268, 207);
@@ -81,29 +77,32 @@
             this.cmbSeaportEx.Name = "cmbSeaportEx";
             this.cmbSeaportEx.Size = new System.Drawing.Size(121, 21);
             this.cmbSeaportEx.TabIndex = 19;
+            this.cmbSeaportEx.SelectedIndexChanged += new System.EventHandler(this.cmbSeaportEx_SelectedIndexChanged);
             // 
             // btnCancelEx
             // 
-            this.btnCancelEx.Location = new System.Drawing.Point(164, 141);
+            this.btnCancelEx.Location = new System.Drawing.Point(164, 105);
             this.btnCancelEx.Name = "btnCancelEx";
             this.btnCancelEx.Size = new System.Drawing.Size(75, 23);
             this.btnCancelEx.TabIndex = 18;
             this.btnCancelEx.Text = "Cancel";
             this.btnCancelEx.UseVisualStyleBackColor = true;
+            this.btnCancelEx.Click += new System.EventHandler(this.btnCancelEx_Click);
             // 
             // btnSubmitEx
             // 
-            this.btnSubmitEx.Location = new System.Drawing.Point(83, 141);
+            this.btnSubmitEx.Location = new System.Drawing.Point(83, 105);
             this.btnSubmitEx.Name = "btnSubmitEx";
             this.btnSubmitEx.Size = new System.Drawing.Size(75, 23);
             this.btnSubmitEx.TabIndex = 17;
             this.btnSubmitEx.Text = "Submit";
             this.btnSubmitEx.UseVisualStyleBackColor = true;
+            this.btnSubmitEx.Click += new System.EventHandler(this.btnSubmitEx_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 103);
+            this.label7.Location = new System.Drawing.Point(12, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 13);
             this.label7.TabIndex = 15;
@@ -118,21 +117,12 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Seaport:";
             // 
-            // tbCoachNoEx
+            // txtCoachNoEx
             // 
-            this.tbCoachNoEx.Location = new System.Drawing.Point(118, 100);
-            this.tbCoachNoEx.Name = "tbCoachNoEx";
-            this.tbCoachNoEx.Size = new System.Drawing.Size(121, 20);
-            this.tbCoachNoEx.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Name:";
+            this.txtCoachNoEx.Location = new System.Drawing.Point(118, 74);
+            this.txtCoachNoEx.Name = "txtCoachNoEx";
+            this.txtCoachNoEx.Size = new System.Drawing.Size(121, 20);
+            this.txtCoachNoEx.TabIndex = 11;
             // 
             // cmbSelectEx
             // 
@@ -141,6 +131,7 @@
             this.cmbSelectEx.Name = "cmbSelectEx";
             this.cmbSelectEx.Size = new System.Drawing.Size(121, 21);
             this.cmbSelectEx.TabIndex = 4;
+            this.cmbSelectEx.SelectedIndexChanged += new System.EventHandler(this.cmbSelectEx_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -150,13 +141,6 @@
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Select Excursion:";
-            // 
-            // tbNameEx
-            // 
-            this.tbNameEx.Location = new System.Drawing.Point(118, 74);
-            this.tbNameEx.Name = "tbNameEx";
-            this.tbNameEx.Size = new System.Drawing.Size(121, 20);
-            this.tbNameEx.TabIndex = 1;
             // 
             // gbBook
             // 
@@ -225,6 +209,7 @@
             this.cmbSelectBook.Name = "cmbSelectBook";
             this.cmbSelectBook.Size = new System.Drawing.Size(121, 21);
             this.cmbSelectBook.TabIndex = 5;
+            this.cmbSelectBook.SelectedIndexChanged += new System.EventHandler(this.cmbSelectBook_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -292,13 +277,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbExc;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbSelectEx;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbNameEx;
         private System.Windows.Forms.GroupBox gbBook;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbCoachNoEx;
+        private System.Windows.Forms.TextBox txtCoachNoEx;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCancelEx;
         private System.Windows.Forms.Button btnSubmitEx;

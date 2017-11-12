@@ -12,18 +12,22 @@ namespace HackathonFramework
     public class Excursion
     {
         private string _excursionID;
-        public string ExcurionID => _excursionID;
+        public string ExcursionID => _excursionID;
 
         private readonly string _portID;
         public string PortID => _portID;
 
+        private readonly string _name;
+        public string Name => _name;
+
         private int _numberOfCoaches;
         public int NumCoach => _numberOfCoaches;
 
-        public Excursion(string excurID, string seapID, int numCoaches)
+        public Excursion(string excurID, string seapID, string name, int numCoaches)
         {
             _excursionID = excurID;
             _portID = seapID;
+            _name = name;
             _numberOfCoaches = numCoaches;
         }
 

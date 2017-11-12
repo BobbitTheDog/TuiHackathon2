@@ -24,17 +24,20 @@ namespace HackathonFramework
             }
         }
 
-        public static List<Excursion> GetAllExcursions()
+        public static List<Excursion> GetExcursionsByPort(string portID)
         {
             using (var conn = Conn)
             using (var cmd = new MySqlCommand(SqlStrings.Excursion_ListAll, conn))
             using (var da = new MySqlDataAdapter(cmd))
             using (var data = new DataTable())
             {
+                cmd.Parameters.AddWithValue("@PortID", portID);
                 da.Fill(data);
-                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["SeaportID"].ToString(), (int)row["NoOfCoaches"])).ToList();
+                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["SeaportID"].ToString(), row["Name"].ToString(), (int)row["NoOfCoaches"])).ToList();
             }
         }
+
+        
 
         public static List<Ship> GetAllShips(bool loadItinerary = true)
         {
@@ -84,6 +87,7 @@ namespace HackathonFramework
                 da.Fill(data);
 
                 return data.AsEnumerable().Select(row => new Booking(
+                    row["bookingID"].ToString(),
                     row["ExcursionID"].ToString(),
                     cabinID,
                     (int)row["numPassengers"],
@@ -91,6 +95,8 @@ namespace HackathonFramework
                 ));
             }
         }
+
+
 
         public static IEnumerable<Booking> GetAllBookings()
         {
@@ -102,6 +108,7 @@ namespace HackathonFramework
                da.Fill(data);
 
                 return data.AsEnumerable().Select(row => new Booking(
+                    row["bookingID"].ToString(),
                     row["ExcursionID"].ToString(),
                     row["cabinID"].ToString(),
                     (int)row["numPassengers"],
@@ -123,6 +130,32 @@ namespace HackathonFramework
                 return (cmd.ExecuteNonQuery() == 1);
             }
         }
+
+        public static bool DeleteExcursion(string excursionID)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Excursion_Delete))
+            {
+                cmd.Parameters.AddWithValue("@excursionID", excursionID);
+
+                return (cmd.ExecuteNonQuery() == 1);
+            }
+        }
+
+        public static bool InsertExcursion(string excursionID, string portID, string name, int numCoach)
+        {
+            using (var conn = Conn)
+            using (var cmd = new MySqlCommand(SqlStrings.Excursion_Insert))
+            {
+                cmd.Parameters.AddWithValue("@excursionID", excursionID);
+                cmd.Parameters.AddWithValue("@portID", portID);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@numCoach", numCoach);
+
+                return (cmd.ExecuteNonQuery() == 1);
+            }
+        }
+
 
         public static Booking UpdateBooking(int bookingID, string cabinID, string excursionID, BookingStatus status, int numPassengers)
         {
