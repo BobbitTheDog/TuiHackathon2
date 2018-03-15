@@ -17,13 +17,16 @@ namespace HackathonFramework
         private readonly string _portID;
         public string PortID => _portID;
 
+        public string Name { get; set; }
+
         private int _numberOfCoaches;
         public int NumCoach => _numberOfCoaches;
 
-        public Excursion(string excurID, string seapID, int numCoaches)
+        public Excursion(string excurID, string seapID, string name, int numCoaches)
         {
             _excursionID = excurID;
             _portID = seapID;
+            Name = name;
             _numberOfCoaches = numCoaches;
         }
     }

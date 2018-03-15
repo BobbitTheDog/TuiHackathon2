@@ -15,10 +15,12 @@ namespace HackathonAPI.Controllers
             return SqlTasks.GetBookings(cabinID);
         }
 
-        public IHttpActionResult PostBooking(string cabinID, string excursionID, int numPass)
+        public IHttpActionResult PostBooking()
         {
-            return Ok(SqlTasks.InsertBooking(cabinID, excursionID, BookingStatus.Cancelable, numPass));
+            var body = Request.Content.ReadAsFormDataAsync();
+            var result = SqlTasks.InsertBooking(body.Result["cabinID"], body.Result["excursionID"], BookingStatus.Cancelable, int.Parse(body.Result["numPass"]));
+            return Ok(result);
         }
-        
+
     }
 }

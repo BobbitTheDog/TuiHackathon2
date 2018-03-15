@@ -107,8 +107,9 @@ function getExcursions(cabinID) {
         cache: false,
         success: function(result) {
             $.each(result, function(index, excursion) {
-                $("#excursionID"&"exmanageID").append($('<option>', {
-                    value: index,
+				console.log(excursion)
+                $("#excursionID").append($('<option>', {
+                    value: excursion["ExcursionID"],
                     text: excursion["Name"]
                 }));
             });
@@ -134,13 +135,12 @@ function getPorts(cabinID){
 
 function formSubmitHandler(event) {
     event.preventDefault();
-    var cabinID = $("#cabinID").val();
     var excursionID = $("#excursionID").val();
     var numPass = $("#nopass").val();
 
     // Returns successful data submission message when the entered information is stored in database.
     
-    if (cabinID === '' || excursionID === '' || numPass === '')
+    if (excursionID === '' || numPass === '')
     {
         alert("Please Fill All Fields");
     }
@@ -151,14 +151,14 @@ function formSubmitHandler(event) {
             type: "POST",
             url: "http://localhost:56709/API/bookings",
             data: {
-				"cabinID": cabinID,
+				"cabinID": cabID,
 				"excursionID": excursionID,
 				"numPass":numPass
 			},
 			datatype: "json",
             cache: false,
             success: function(result) {
-                alert(result);
+                alert(result ? "Success!" : "Booking failed");
             }
         });
     }

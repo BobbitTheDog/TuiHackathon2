@@ -33,7 +33,7 @@ namespace HackathonFramework
             {
                 cmd.Parameters.AddWithValue("@cruiseID", cruiseID);
                 da.Fill(data);
-                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["PortID"].ToString(), (int)row["NumCoaches"])).ToList();
+                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["PortID"].ToString(),row["Name"].ToString(), (int)row["NumCoaches"])).ToList();
             }
         }
 
@@ -72,7 +72,7 @@ namespace HackathonFramework
             using (var data = new DataTable())
             {
                 da.Fill(data);
-                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["SeaportID"].ToString(), (int)row["NoOfCoaches"])).ToList();
+                return data.AsEnumerable().Select(row => new Excursion(row["ExcursionID"].ToString(), row["PortID"].ToString(), row["Name"].ToString(), (int)row["NumCoaches"])).ToList();
             }
         }
 
@@ -153,8 +153,9 @@ namespace HackathonFramework
         public static bool InsertBooking(string cabinID, string excursionID, BookingStatus status, int numPassengers)
         {
             using (var conn = Conn)
-            using (var cmd = new MySqlCommand(SqlStrings.Booking_Insert))
+            using (var cmd = new MySqlCommand(SqlStrings.Booking_Insert, conn))
             {
+                conn.Open();
                 cmd.Parameters.AddWithValue("@cabinID", cabinID);
                 cmd.Parameters.AddWithValue("@excursionID", excursionID);
                 cmd.Parameters.AddWithValue("@status", status);
